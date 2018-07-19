@@ -1,0 +1,63 @@
+Manass-MacBook-Pro:~ manassrivastava$ http GET http://admin.step-441.dyn.keepcollective.com/catalog_service/admin/templates X-Rosi-Auth:e219884225684d9d65a58c914e02ce84 X-Rosi-Platform:keep X-Rosi-Store:ca X-Rosi-Locale:fr-CA
+HTTP/1.1 200 OK
+Cache-Control: max-age=0, private, must-revalidate
+Content-Type: application/json; charset=utf-8
+Date: Thu, 19 Jul 2018 12:30:37 GMT
+ETag: W/"b563221f6e1490cab79ad35f1b218f8a"
+Set-Cookie: __profilin=p%3Dt%2Ca%3Db86cabfb445bc0be285ee8763b2d4eda%7Cd6caa4ae6d074f891074ef56153addbb; path=/
+Status: 200 OK
+Transfer-Encoding: chunked
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+X-Request-Id: 57789e4d-48e1-44bd-a79f-9d666d28e060
+X-Rosi-Container: 827aea650d85
+X-Runtime: 0.950545
+X-XSS-Protection: 1; mode=block
+
+[
+    {
+        "display_name": "Centered single character (block font)",
+        "id": 55,
+        "image": {
+            "alternate": false,
+            "full_size_url": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/original/b9033a59a9ae75334f24857d709edbb08b32d5c1.png?1470404922",
+            "ipad_large": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/ipad_large_1x/bf3e565b80862a2f00acd2fd5ef4eb12757957a1.png?1470404922",
+            "ipad_medium": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/ipad_medium_1x/8c8d0a539cfef530acd12934430cc919ff58e7b6.png?1470404922",
+            "ipad_thumbnail": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/ipad_thumb_1x/8e2ef578e4204c5945af62223755f854dc6030d2.png?1470404922",
+            "iphone_large": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/iphone_large_1x/2a14cd9517f5f427954aaa32dc719c24aebf3ad8.png?1470404922",
+            "iphone_medium": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/iphone_medium_1x/b0fa9eb453e9a2a9c168372181fa96383b2b1639.png?1470404922",
+            "iphone_thumbnail": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/iphone_thumb_1x/f3cfbd288121372379070ddb5e62013c2146f035.png?1470404922",
+            "position": null,
+            "thumbnail_large_url": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/thumb_large/05faf70740f62428da90baed98b61c363247a9b3.png?1470404922",
+            "thumbnail_med_url": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/thumb_med/e0f664f7166c17b652c5b79f3bc7aae0b60c7280.png?1470404922",
+            "thumbnail_small_url": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/thumb_small/149a485b2791a3d96b10766d6ffc1709925f5111.png?1470404922"
+        },
+        "inputs": 1,
+        "name": "H_Block_1_character",
+        "orientation": "horizontal",
+        "personalization_type": "Laser-Engraving-Template",
+        "visible": true
+    },
+    {
+        "display_name": "One line (block font)",
+        "id": 355,
+        "image": {
+            "alternate": false,
+            "full_size_url": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/original/dad6806d89598f183d27a177eed6a2bfbb603a03.png?1502872514",
+            "ipad_large": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/ipad_large_1x/cf4c03661fa05bfba0abdfbc51a88d87a35599d9.png?1502872514",
+            "ipad_medium": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/ipad_medium_1x/0a3b57b321f8ae3a7a0e255cecb041491b20d382.png?1502872514",
+            "ipad_thumbnail": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/ipad_thumb_1x/259947115454dbe05c2babe9f9679bd000270cb2.png?1502872514",
+            "iphone_large": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/iphone_large_1x/88ad9b287a996f0796bc26c400014a8fff73dd00.png?1502872514",
+            "iphone_medium": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/iphone_medium_1x/4d0dc410a272e128d6c32c282c42ce6f5cae952c.png?1502872514",
+            "iphone_thumbnail": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/iphone_thumb_1x/7908b5fc01a8d7056cad728599ae446905255600.png?1502872514",
+            "position": null,
+            "thumbnail_large_url": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/thumb_large/fe86881abcb09080db7ad2ea3e36f38cbd15378c.png?1502872514",
+            "thumbnail_med_url": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/thumb_med/5305872d6a11570629d737d7922e313bc206b678.png?1502872514",
+            "thumbnail_small_url": "http://www.step-441.dyn.keepcollective.com/catalog_service/system/images/style/thumb_small/c8edd590bd7691e5513a058c340571f0ebe62afb.png?1502872514"
+        },
+        "inputs": 1,
+        "name": "H_Block_1_Line",
+        "orientation": "horizontal",
+        "personalization_type": "Laser-Engraving-Template",
+        "visible": true
+    },
