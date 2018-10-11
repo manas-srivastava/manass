@@ -1,0 +1,529 @@
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage stelladot-us --tag catalog
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=stelladot-us
++ npm test -- --tag catalog
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "catalog"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF stelladot-sampling-all-qualify-enabled
+Got false as value for FF stelladot-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Lounge / Common / Catalog / Catalog Spec] Test Suite
+=========================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags genericDsrUS) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+ ✔ Passed [ok]: Starting seeding of subscription for data with tags genericDsrUS) ok
+ ✔ Passed [ok]: Retrying for subscription: in progress ok
+ ✔ Passed [ok]: Seeded subscription ok
+
+Running:  Opening catalog page from the navigation dropdown
+ ✔ Element <#login-field> was present after 16 milliseconds.
+ ✔ Element <#password-field> was present after 15 milliseconds.
+Entered "generic_sd_us_dsr_100306001@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 25 milliseconds.
+ ✔ Element <#signin_submit> was not present after 588 milliseconds.
+ ✔ Element <.keyloader> was present after 17 milliseconds.
+ ✔ Element <.keyloader> was not visible after 1597 milliseconds.
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'Browse Catalog')]]> was visible after 50 milliseconds.
+
+OK. 7 assertions passed. (21.742s)
+
+Running:  Verify text, expand/collapse, navigation and title for all main and sub categories
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Gift Cards')]]> text to equal: "GIFT CARDS" - condition was met in 557ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Gift Cards')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 79 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "GIFT CARDS" - condition was met in 38ms
+ ✔ Element <#category_name_header,.header-image> was visible after 30 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "GIFT CARDS" - condition was met in 31ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Jewelry')]]> text to equal: "JEWELRY" - condition was met in 36ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Jewelry')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 42 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "JEWELRY" - condition was met in 47ms
+ ✔ Element <#category_name_header,.header-image> was visible after 35 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "JEWELRY" - condition was met in 30ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Necklaces')]]> text to equal: "Necklaces" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Necklaces')]]> was present after 12 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 57 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Necklaces" - condition was met in 40ms
+ ✔ Element <#category_name_header,.header-image> was visible after 541 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "NECKLACES" - condition was met in 36ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Statements')]]> text to equal: "Statements" - condition was met in 47ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Statements')]]> was present after 12 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 35 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Statements" - condition was met in 30ms
+ ✔ Element <#category_name_header,.header-image> was visible after 655 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "STATEMENTS" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Delicates & Layering')]]> text to equal: "Delicates & Layering" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Delicates & Layering')]]> was present after 12 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 113 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Delicates & Layering" - condition was met in 27ms
+ ✔ Element <#category_name_header,.header-image> was visible after 538 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "DELICATES & LAYERING" - condition was met in 27ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Pendants')]]> text to equal: "Pendants" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Pendants')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 74 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Pendants" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 562 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "PENDANTS" - condition was met in 35ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Chokers & Chains')]]> text to equal: "Chokers & Chains" - condition was met in 40ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Chokers & Chains')]]> was present after 12 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 53 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Chokers & Chains" - condition was met in 37ms
+ ✔ Element <#category_name_header,.header-image> was visible after 1107 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "CHOKERS & CHAINS" - condition was met in 28ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Extenders')]]> text to equal: "Extenders" - condition was met in 37ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Extenders')]]> was present after 12 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 81 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Extenders" - condition was met in 32ms
+ ✔ Element <#category_name_header,.header-image> was visible after 26 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "EXTENDERS" - condition was met in 27ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Bracelets')]]> text to equal: "Bracelets" - condition was met in 36ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Bracelets')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 39 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Bracelets" - condition was met in 36ms
+ ✔ Element <#category_name_header,.header-image> was visible after 546 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "BRACELETS" - condition was met in 28ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Statements')]]> text to equal: "Statements" - condition was met in 29ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Statements')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 35 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Statements" - condition was met in 30ms
+ ✔ Element <#category_name_header,.header-image> was visible after 546 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "STATEMENTS" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Bangles & Cuffs')]]> text to equal: "Bangles & Cuffs" - condition was met in 42ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Bangles & Cuffs')]]> was present after 12 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 41 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Bangles & Cuffs" - condition was met in 37ms
+ ✔ Element <#category_name_header,.header-image> was visible after 544 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "BANGLES & CUFFS" - condition was met in 25ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Wraps')]]> text to equal: "Wraps" - condition was met in 36ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Wraps')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 50 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Wraps" - condition was met in 36ms
+ ✔ Element <#category_name_header,.header-image> was visible after 25 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "WRAPS" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Links & Chains')]]> text to equal: "Links & Chains" - condition was met in 37ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Links & Chains')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 40 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Links & Chains" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 25 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "LINKS & CHAINS" - condition was met in 33ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Earrings')]]> text to equal: "Earrings" - condition was met in 63ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Earrings')]]> was present after 14 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 43 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Earrings" - condition was met in 33ms
+ ✔ Element <#category_name_header,.header-image> was visible after 538 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "EARRINGS" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Drops & Chandeliers')]]> text to equal: "Drops & Chandeliers" - condition was met in 36ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Drops & Chandeliers')]]> was present after 14 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 44 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Drops & Chandeliers" - condition was met in 30ms
+ ✔ Element <#category_name_header,.header-image> was visible after 543 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "DROPS & CHANDELIERS" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Ear Jackets')]]> text to equal: "Ear Jackets" - condition was met in 39ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Ear Jackets')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 45 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Ear Jackets" - condition was met in 31ms
+ ✔ Element <#category_name_header,.header-image> was visible after 27 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "EAR JACKETS" - condition was met in 25ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Hoops')]]> text to equal: "Hoops" - condition was met in 35ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Hoops')]]> was present after 17 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 39 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Hoops" - condition was met in 31ms
+ ✔ Element <#category_name_header,.header-image> was visible after 542 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "HOOPS" - condition was met in 27ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Studs')]]> text to equal: "Studs" - condition was met in 35ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Studs')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 84 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Studs" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 539 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "STUDS" - condition was met in 27ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Rings')]]> text to equal: "Rings" - condition was met in 36ms
+  Warn: WaitForElement found 2 elements for selector "//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Rings')]]". Only the first one will be checked.
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Rings')]]> was present after 13 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 52 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Rings" - condition was met in 31ms
+ ✔ Element <#category_name_header,.header-image> was visible after 579 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "RINGS" - condition was met in 28ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Cocktail Rings')]]> text to equal: "Cocktail Rings" - condition was met in 36ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Cocktail Rings')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 47 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Cocktail Rings" - condition was met in 27ms
+ ✔ Element <#category_name_header,.header-image> was visible after 24 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "COCKTAIL RINGS" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Bands')]]> text to equal: "Bands" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Bands')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 39 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Bands" - condition was met in 28ms
+ ✔ Element <#category_name_header,.header-image> was visible after 24 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "BANDS" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Charms & Engravables')]]> text to equal: "Charms & Engravables" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Charms & Engravables')]]> was present after 12 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 35 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Charms & Engravables" - condition was met in 34ms
+ ✔ Element <#category_name_header,.header-image> was visible after 542 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "CHARMS & ENGRAVABLES" - condition was met in 47ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Engravables')]]> text to equal: "Engravables" - condition was met in 32ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Engravables')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 34 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Engravables" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 26 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "ENGRAVABLES" - condition was met in 25ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Charms')]]> text to equal: "Charms" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Charms')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 63 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Charms" - condition was met in 131ms
+ ✔ Element <#category_name_header,.header-image> was visible after 1053 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "CHARMS" - condition was met in 25ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Covet Fine Jewelry')]]> text to equal: "Covet Fine Jewelry" - condition was met in 36ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Covet Fine Jewelry')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 107 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Covet Fine Jewelry" - condition was met in 30ms
+ ✔ Element <#category_name_header,.header-image> was visible after 23 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "COVET FINE JEWELRY" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Watches')]]> text to equal: "Watches" - condition was met in 35ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Watches')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 41 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Watches" - condition was met in 30ms
+ ✔ Element <#category_name_header,.header-image> was visible after 26 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "WATCHES" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Girls Collection')]]> text to equal: "Girls Collection" - condition was met in 35ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Girls Collection')]]> was present after 9 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 35 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Girls Collection" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 33 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "GIRLS COLLECTION" - condition was met in 27ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Storage & Display')]]> text to equal: "Storage & Display" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Storage & Display')]]> was present after 19 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 38 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Storage & Display" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 26 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "STORAGE & DISPLAY" - condition was met in 30ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Jewelry')]]/following-sibling::span> was present after 16 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Necklaces')]]> to not be present - element was not found in 29ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Bracelets')]]> to not be present - element was not found in 30ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Earrings')]]> to not be present - element was not found in 20ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Rings')]]> to not be present - element was not found in 16ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Charms & Engravables')]]> to not be present - element was not found in 9ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Covet Fine Jewelry')]]> to not be present - element was not found in 9ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Watches')]]> to not be present - element was not found in 11ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Girls Collection')]]> to not be present - element was not found in 12ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Storage & Display')]]> to not be present - element was not found in 10ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Bags')]]> text to equal: "BAGS" - condition was met in 35ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Bags')]]> was present after 9 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 36 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "BAGS" - condition was met in 35ms
+ ✔ Element <#category_name_header,.header-image> was visible after 24 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "BAGS" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Totes')]]> text to equal: "Totes" - condition was met in 41ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Totes')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 53 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Totes" - condition was met in 30ms
+ ✔ Element <#category_name_header,.header-image> was visible after 534 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "TOTES" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Clutches & Crossbody')]]> text to equal: "Clutches & Crossbody" - condition was met in 58ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Clutches & Crossbody')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 127 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Clutches & Crossbody" - condition was met in 30ms
+ ✔ Element <#category_name_header,.header-image> was visible after 1052 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "CLUTCHES & CROSSBODY" - condition was met in 24ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Wallets & Companions')]]> text to equal: "Wallets & Companions" - condition was met in 42ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Wallets & Companions')]]> was present after 18 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 49 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Wallets & Companions" - condition was met in 28ms
+ ✔ Element <#category_name_header,.header-image> was visible after 1051 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "WALLETS & COMPANIONS" - condition was met in 27ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Versatile Bags')]]> text to equal: "Versatile Bags" - condition was met in 36ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Versatile Bags')]]> was present after 24 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 42 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Versatile Bags" - condition was met in 41ms
+ ✔ Element <#category_name_header,.header-image> was visible after 26 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "VERSATILE BAGS" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Covet Leather Accessories')]]> text to equal: "Covet Leather Accessories" - condition was met in 35ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Covet Leather Accessories')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 45 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Covet Leather Accessories" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 24 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "COVET LEATHER ACCESSORIES" - condition was met in 27ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Travel')]]> text to equal: "Travel" - condition was met in 35ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Travel')]]> was present after 9 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 40 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Travel" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 26 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "TRAVEL" - condition was met in 26ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Bags')]]/following-sibling::span> was present after 18 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Totes')]]> to not be present - element was not found in 12ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Clutches & Crossbody')]]> to not be present - element was not found in 10ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Wallets & Companions')]]> to not be present - element was not found in 11ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Versatile Bags')]]> to not be present - element was not found in 11ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Covet Leather Accessories')]]> to not be present - element was not found in 20ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Travel')]]> to not be present - element was not found in 10ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Accessories')]]> text to equal: "ACCESSORIES" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Accessories')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 39 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "ACCESSORIES" - condition was met in 33ms
+ ✔ Element <#category_name_header,.header-image> was visible after 544 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "ACCESSORIES" - condition was met in 27ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Sunglasses')]]> text to equal: "Sunglasses" - condition was met in 32ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Sunglasses')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 46 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Sunglasses" - condition was met in 30ms
+ ✔ Element <#category_name_header,.header-image> was visible after 24 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "SUNGLASSES" - condition was met in 25ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Scarves & Hats')]]> text to equal: "Scarves & Hats" - condition was met in 37ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Scarves & Hats')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 41 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Scarves & Hats" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 25 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "SCARVES & HATS" - condition was met in 28ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Sarongs')]]> text to equal: "Sarongs" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Sarongs')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 43 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Sarongs" - condition was met in 28ms
+ ✔ Element <#category_name_header,.header-image> was visible after 28 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "SARONGS" - condition was met in 25ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Bag Charms')]]> text to equal: "Bag Charms" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Bag Charms')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 48 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Bag Charms" - condition was met in 30ms
+ ✔ Element <#category_name_header,.header-image> was visible after 32 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "BAG CHARMS" - condition was met in 26ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Accessories')]]/following-sibling::span> was present after 15 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Sunglasses')]]> to not be present - element was not found in 13ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Scarves & Hats')]]> to not be present - element was not found in 11ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Sarongs')]]> to not be present - element was not found in 9ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Bag Charms')]]> to not be present - element was not found in 10ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Clothing')]]> text to equal: "CLOTHING" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Clothing')]]> was present after 9 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 57 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "CLOTHING" - condition was met in 32ms
+ ✔ Element <#category_name_header,.header-image> was visible after 575 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "CLOTHING" - condition was met in 28ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Tops')]]> text to equal: "Tops" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Tops')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 81 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Tops" - condition was met in 50ms
+ ✔ Element <#category_name_header,.header-image> was visible after 545 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "TOPS" - condition was met in 31ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Tunics')]]> text to equal: "Tunics" - condition was met in 36ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Tunics')]]> was present after 12 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 46 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Tunics" - condition was met in 34ms
+ ✔ Element <#category_name_header,.header-image> was visible after 25 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "TUNICS" - condition was met in 33ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Dresses')]]> text to equal: "Dresses" - condition was met in 36ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Dresses')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 68 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Dresses" - condition was met in 32ms
+ ✔ Element <#category_name_header,.header-image> was visible after 563 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "DRESSES" - condition was met in 32ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Clothing')]]/following-sibling::span> was present after 19 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Tops')]]> to not be present - element was not found in 13ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Tunics')]]> to not be present - element was not found in 11ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Dresses')]]> to not be present - element was not found in 9ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Brand Boutique')]]> text to equal: "BRAND BOUTIQUE" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Brand Boutique')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 42 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "BRAND BOUTIQUE" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 31 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "BRAND BOUTIQUE" - condition was met in 30ms
+
+OK. 296 assertions passed. (1m 17s / 77067ms)
+
+Running:  Verify text, expand/collapse, navigation and title for all main and sub collections
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,"What's New")]]> text to equal: "WHAT'S NEW" - condition was met in 49ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,"What's New")]]> was present after 9 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 38 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "WHAT'S NEW" - condition was met in 33ms
+ ✔ Element <#category_name_header,.header-image> was visible after 537 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "WHAT'S NEW" - condition was met in 27ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'Rebecca Minkoff')]]> text to equal: "Rebecca Minkoff" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'Rebecca Minkoff')]]> was present after 9 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 42 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Rebecca Minkoff" - condition was met in 30ms
+ ✔ Element <#category_name_header,.header-image> was visible after 79 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "REBECCA MINKOFF" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,"What's New")]]/following-sibling::span> was present after 16 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Rebecca Minkoff')]]> to not be present - element was not found in 26ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Collections')]]> text to equal: "COLLECTIONS" - condition was met in 46ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Collections')]]> was present after 45 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 34 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "COLLECTIONS" - condition was met in 31ms
+ ✔ Element <#category_name_header,.header-image> was visible after 25 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "COLLECTIONS" - condition was met in 27ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'Shop for a Cause')]]> text to equal: "Shop for a Cause" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'Shop for a Cause')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 35 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Shop for a Cause" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 25 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "SHOP FOR A CAUSE" - condition was met in 27ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Collections')]]/following-sibling::span> was present after 17 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Shop for a Cause')]]> to not be present - element was not found in 17ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Recommended Samples')]]> text to equal: "RECOMMENDED SAMPLES" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Recommended Samples')]]> was present after 20 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 34 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "RECOMMENDED SAMPLES" - condition was met in 36ms
+ ✔ Element <#category_name_header,.header-image> was visible after 26 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "RECOMMENDED SAMPLES" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'Recommended Trays')]]> text to equal: "Recommended Trays" - condition was met in 35ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'Recommended Trays')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 35 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Recommended Trays" - condition was met in 32ms
+ ✔ Element <#category_name_header,.header-image> was visible after 26 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "RECOMMENDED TRAYS" - condition was met in 28ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'Clothing')]]> text to equal: "Clothing" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'Clothing')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 100 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Clothing" - condition was met in 36ms
+ ✔ Element <#category_name_header,.header-image> was visible after 2158 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "CLOTHING" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'Covet')]]> text to equal: "Covet" - condition was met in 36ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'Covet')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 76 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "Covet" - condition was met in 31ms
+ ✔ Element <#category_name_header,.header-image> was visible after 26 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "COVET" - condition was met in 27ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'New Stylist - Essentials')]]> text to equal: "New Stylist - Essentials" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'New Stylist - Essentials')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 48 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "New Stylist - Essentials" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 26 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "NEW STYLIST - ESSENTIALS" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'New Stylist - More to Love')]]> text to equal: "New Stylist - More to Love" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'New Stylist - More to Love')]]> was present after 12 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 45 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "New Stylist - More to Love" - condition was met in 27ms
+ ✔ Element <#category_name_header,.header-image> was visible after 26 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "NEW STYLIST - MORE TO LOVE" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'New Stylist - Ultimate')]]> text to equal: "New Stylist - Ultimate" - condition was met in 34ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'New Stylist - Ultimate')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 44 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "New Stylist - Ultimate" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 44 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "NEW STYLIST - ULTIMATE" - condition was met in 27ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Recommended Samples')]]/following-sibling::span> was present after 17 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Recommended Trays')]]> to not be present - element was not found in 20ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Clothing')]]> to not be present - element was not found in 22ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'Covet')]]> to not be present - element was not found in 18ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'New Stylist - Essentials')]]> to not be present - element was not found in 19ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'New Stylist - More to Love')]]> to not be present - element was not found in 37ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'New Stylist - Ultimate')]]> to not be present - element was not found in 15ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Product Alert')]]> text to equal: "PRODUCT ALERT" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Product Alert')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 35 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "PRODUCT ALERT" - condition was met in 33ms
+ ✔ Element <#category_name_header,.header-image> was visible after 27 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "PRODUCT ALERT" - condition was met in 26ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'LIS')]]> text to equal: "LIS" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'LIS')]]> was present after 10 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 34 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "LIS" - condition was met in 33ms
+ ✔ Element <#category_name_header,.header-image> was visible after 25 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "LIS" - condition was met in 33ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'OOS (no backorder)')]]> text to equal: "OOS (no backorder)" - condition was met in 36ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'OOS (no backorder)')]]> was present after 20 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 76 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "OOS (no backorder)" - condition was met in 32ms
+ ✔ Element <#category_name_header,.header-image> was visible after 26 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "OOS (NO BACKORDER)" - condition was met in 27ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'OOS (backorder)')]]> text to equal: "OOS (backorder)" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'collection-name') and text()[contains(.,'OOS (backorder)')]]> was present after 12 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 34 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "OOS (backorder)" - condition was met in 29ms
+ ✔ Element <#category_name_header,.header-image> was visible after 1564 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "OOS (BACKORDER)" - condition was met in 28ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Product Alert')]]/following-sibling::span> was present after 17 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'LIS')]]> to not be present - element was not found in 21ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'OOS (no backorder)')]]> to not be present - element was not found in 24ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]//*[contains(@class, 'innerLevel') and not(contains(@class, 'hide'))]//a[contains(@class, 'category-name') and text()[contains(.,'OOS (backorder)')]]> to not be present - element was not found in 22ms.
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Business Supplies')]]> text to equal: "BUSINESS SUPPLIES" - condition was met in 57ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Business Supplies')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 34 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "BUSINESS SUPPLIES" - condition was met in 31ms
+ ✔ Element <#category_name_header,.header-image> was visible after 24 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "BUSINESS SUPPLIES" - condition was met in 29ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Display Items')]]> text to equal: "DISPLAY ITEMS" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Display Items')]]> was present after 11 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 43 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "DISPLAY ITEMS" - condition was met in 28ms
+ ✔ Element <#category_name_header,.header-image> was visible after 559 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "DISPLAY ITEMS" - condition was met in 40ms
+ ✔ Expected element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Sale')]]> text to equal: "SALE" - condition was met in 45ms
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-collection')]/a[contains(@class, 'collection-name') and text()[contains(.,'Sale')]]> was present after 12 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".category-tab.active". Only the first one will be checked.
+ ✔ Element <.category-tab.active> was visible after 75 milliseconds.
+ ✔ Expected element <.category-tab.active> text to contain: "SALE" - condition was met in 33ms
+ ✔ Element <#category_name_header,.header-image> was visible after 25 milliseconds.
+ ✔ Expected element <#category_name_header> text to equal: "SALE" - condition was met in 27ms
+
+OK. 123 assertions passed. (29.406s)
+
+OK. 426  total assertions passed. (2m 17s)
+Terminated: 15
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ 
