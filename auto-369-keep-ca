@@ -1,0 +1,360 @@
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage keep-ca --tag ecomHostessCorpOrder
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=keep-ca
++ npm test -- --tag ecomHostessCorpOrder
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "ecomHostessCorpOrder"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF keep-referral-rewards-program
+Setting up value for FF keep-lounge-expedited-shipping-methods
+Setting up value for FF keep-sampling-all-qualify-enabled
+Got true as value for FF keep-referral-rewards-program
+Got true as value for FF keep-lounge-expedited-shipping-methods
+Got false as value for FF keep-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Www / Common / Orders / Ecom Hostess Corp Order Spec] Test Suite
+=====================================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags ecomHostessCorporderCA) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+ ✔ Passed [ok]: Starting seeding of inventory for data with tags multipleTypeItems) ok
+ ✔ Passed [ok]: Retrying for inventory: in progress ok
+ ✔ Passed [ok]: Seeded inventory ok
+
+Running:  Login, clear cart and cookies
+ ✔ Element <#signin_submit> was present after 17 milliseconds.
+Entered "customer-1003632008@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 9 milliseconds.
+ ✔ Element <#signin_submit> was not present after 1057 milliseconds.
+ ✔ Element <a.cancel-order> was visible after 34 milliseconds.
+ ✔ Element <#cancel_order_confirm> was visible after 551 milliseconds.
+
+OK. 5 assertions passed. (47.488s)
+
+Running:  Verify no designer/design sesison is selected
+ ✔ Expected element <.find-designer-or-hostess-region> to be visible - condition was met in 60ms
+ ✔ Expected element <Section[name=findDesignerOrHostess],Element[name=@findDesigner]> to be visible - condition was met in 41ms
+ ✔ Expected element <.nav-top .designer-container a.label-designer> to not be present - element was not found in 27ms.
+ ✔ Expected element <.find-designer-or-hostess-region> to be visible - condition was met in 17ms
+ ✔ Expected element <Section[name=findDesignerOrHostess],Element[name=@findHostess]> to be visible - condition was met in 37ms
+ ✔ Expected element <.nav-top .find-hostess-section a.label-hostess> to not be present - element was not found in 15ms.
+
+OK. 6 assertions passed. (209ms)
+
+Running:  Add multipple type of items to bag and verify bag quantity
+ ✔ Element <#nav-search> was present after 13 milliseconds.
+ ✔ Element <#navSearchInput> was visible after 31 milliseconds.
+ ✔ Expected element <#navSearchInput> to have value equal: "KC002GD2" - condition was met in 18ms
+ ✔ Element <(//*[contains(@class, 'pdp-catalog-gallery') and not(descendant::*[contains(@class, 'out-of-stock-text')])])[1]> was visible after 574 milliseconds.
+ ✔ Element <#styles> was not present after 111 milliseconds.
+ ✔ Element <[name=style]> was visible after 574 milliseconds.
+ ✔ Element <//option[text()='Gold']> was present after 14 milliseconds.
+ ✔ Element <#sku_id> was visible after 31 milliseconds.
+ ✔ Element <//option[text()='2']> was present after 16 milliseconds.
+ ✔ Element <.num.bottom-5.no-margin> was visible after 29 milliseconds.
+ ✔ Element <#content .pdp-add-to-cart:enabled> was visible after 31 milliseconds.
+ ✔ Element <.item-added-notification[style*="display: block;"]> was visible after 1074 milliseconds.
+ ✔ Element <.pdp-name> was visible after 48 milliseconds.
+Adding "NUMBERS 0-9" to cart
+ ✔ Element <#nav-search> was present after 11 milliseconds.
+ ✔ Element <#navSearchInput> was visible after 22 milliseconds.
+ ✔ Expected element <#navSearchInput> to have value equal: "KA026SVR" - condition was met in 18ms
+ ✔ Element <(//*[contains(@class, 'pdp-catalog-gallery') and not(descendant::*[contains(@class, 'out-of-stock-text')])])[1]> was visible after 555 milliseconds.
+ ✔ Element <#styles> was not present after 93 milliseconds.
+ ✔ Element <[name=style]> was visible after 555 milliseconds.
+ ✔ Element <//option[text()='Silver']> was present after 44 milliseconds.
+ ✔ Element <.num.bottom-5.no-margin> was visible after 23 milliseconds.
+ ✔ Element <#content .pdp-add-to-cart:enabled> was visible after 24 milliseconds.
+ ✔ Element <.item-added-notification[style*="display: block;"]> was visible after 1088 milliseconds.
+ ✔ Element <.pdp-name> was visible after 42 milliseconds.
+Adding "DIAPER PIN" to cart
+ ✔ Element <#nav-search> was present after 11 milliseconds.
+ ✔ Element <#navSearchInput> was visible after 20 milliseconds.
+ ✔ Expected element <#navSearchInput> to have value equal: "KN011G" - condition was met in 16ms
+ ✔ Element <(//*[contains(@class, 'pdp-catalog-gallery') and not(descendant::*[contains(@class, 'out-of-stock-text')])])[1]> was visible after 560 milliseconds.
+ ✔ Element <#styles> was not present after 67 milliseconds.
+ ✔ Element <.num.bottom-5.no-margin> was visible after 555 milliseconds.
+ ✔ Element <#content .pdp-add-to-cart:enabled> was visible after 33 milliseconds.
+ ✔ Element <.item-added-notification[style*="display: block;"]> was visible after 1080 milliseconds.
+ ✔ Element <.pdp-name> was visible after 44 milliseconds.
+Adding "BEADED NECKLACE" to cart
+ ✔ Element <.item-added-notification[style*="display: block;"]> was not visible after 5698 milliseconds.
+ ✔ Element <#content .pdp-add-to-cart:enabled> was visible after 17 milliseconds.
+ ✔ Element <.item-added-notification[style*="display: block;"]> was visible after 1062 milliseconds.
+ ✔ Element <.pdp-name> was visible after 40 milliseconds.
+Adding "BEADED NECKLACE" to cart
+ ✔ Element <.menu a[href="/shop"]> was visible after 53 milliseconds.
+ ✔ Element <#category-dropdown #sale> was visible after 42 milliseconds.
+ ✔ Element <(//*[contains(@class, 'pdp-catalog-gallery') and not(contains(., 'Engraving') or contains(., 'Engravable') or contains(., 'Test Product') or contains(., 'Ships TBD') or descendant::*[contains(@class, 'out-of-stock-text')])])[1]> was visible after 1260 milliseconds.
+ ✔ Element <#styles> was not present after 44 milliseconds.
+ ✔ Element <.num.bottom-5.no-margin> was visible after 571 milliseconds.
+ ✔ Element <#content .pdp-add-to-cart:enabled> was visible after 22 milliseconds.
+ ✔ Element <.item-added-notification[style*="display: block;"]> was visible after 1082 milliseconds.
+ ✔ Element <.pdp-name> was visible after 42 milliseconds.
+Adding "GEO CUT OUT LETTER" to cart
+ ✔ Element <.num.bottom-5.no-margin> was visible after 32 milliseconds.
+ ✔ Element <.pdp-name> was visible after 26 milliseconds.
+ ✔ Element <.sku-code, #style_code> was visible after 26 milliseconds.
+ ✔ Element <#nav-bag .qty> was present after 13 milliseconds.
+ ✔ Expected element <#nav-bag .qty> text to equal: "5" - condition was met in 25ms
+
+OK. 50 assertions passed. (41.759s)
+
+Running:  Clicking bag icon, takes user to the cart page
+ ✔ Element <#cart-content, #content table> was present after 2888 milliseconds.
+ ✔ Element <#cart-content, #content table> was visible after 23 milliseconds.
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Numbers 0-9") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Numbers 0-9" - condition was met in 39ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Numbers 0-9") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KC002GD2" - condition was met in 25ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Numbers 0-9") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Gold" - condition was met in 25ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Numbers 0-9") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "2" - condition was met in 26ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Numbers 0-9") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Qty: 1" - condition was met in 24ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Numbers 0-9") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'price-column')]> text to contain: "$9.00 CAD" - condition was met in 32ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Numbers 0-9") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'total-column')]> text to contain: "$9.00 CAD" - condition was met in 36ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Diaper Pin") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Diaper Pin" - condition was met in 43ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Diaper Pin") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KA026SVR" - condition was met in 23ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Diaper Pin") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Silver" - condition was met in 23ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Diaper Pin") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Qty: 1" - condition was met in 31ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Diaper Pin") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'price-column')]> text to contain: "$11.00 CAD" - condition was met in 33ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Diaper Pin") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'total-column')]> text to contain: "$11.00 CAD" - condition was met in 33ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Beaded Necklace") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Beaded Necklace" - condition was met in 39ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Beaded Necklace") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KN011G" - condition was met in 25ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Beaded Necklace") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Qty: 1" - condition was met in 27ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Beaded Necklace") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'price-column')]> text to contain: "$36.00 CAD" - condition was met in 37ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Beaded Necklace") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'total-column')]> text to contain: "$36.00 CAD" - condition was met in 32ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Beaded Necklace") and not(contains(@class, 'cart-item-desc'))])[2]//*[contains(@class, 'cart-item-desc')]> text to contain: "Beaded Necklace" - condition was met in 38ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Beaded Necklace") and not(contains(@class, 'cart-item-desc'))])[2]//*[contains(@class, 'cart-item-desc')]> text to contain: "KN011G" - condition was met in 25ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Beaded Necklace") and not(contains(@class, 'cart-item-desc'))])[2]//*[contains(@class, 'cart-item-desc')]> text to contain: "Qty: 1" - condition was met in 29ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Beaded Necklace") and not(contains(@class, 'cart-item-desc'))])[2]//*[contains(@class, 'price-column')]> text to contain: "$36.00 CAD" - condition was met in 41ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Beaded Necklace") and not(contains(@class, 'cart-item-desc'))])[2]//*[contains(@class, 'total-column')]> text to contain: "$36.00 CAD" - condition was met in 31ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Geo Cut Out Letter") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Geo Cut Out Letter" - condition was met in 36ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Geo Cut Out Letter") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KC008GA" - condition was met in 24ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Geo Cut Out Letter") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Qty: 1" - condition was met in 24ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Geo Cut Out Letter") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'price-column')]> text to contain: "$11.00 CAD" - condition was met in 36ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Geo Cut Out Letter") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'price-column')]> text to contain: "$7.70 CAD" - condition was met in 21ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Geo Cut Out Letter") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'total-column')]> text to contain: "$7.70 CAD" - condition was met in 34ms
+ ✔ Expected element <h2.top-5.bottom-5.num.inline-block.pull-right> text to equal: "$99.70 CAD" - condition was met in 38ms
+
+OK. 32 assertions passed. (6.987s)
+
+Running:  Apply and verify Hostess Half-off
+  Warn: WaitForElement found 2 elements for selector "(//*[contains(@class, 'cart-item') and contains(.,"Numbers 0-9") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'label-text')]". Only the first one will be checked.
+ ✔ Element <(//*[contains(@class, 'cart-item') and contains(.,"Numbers 0-9") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'label-text')]> was visible after 35 milliseconds.
+ ✔ Expected element <(//*[contains(@class, 'cart-item') and contains(.,"Numbers 0-9") and not(contains(@class, 'cart-item-desc'))])[1]//*[contains(@class, 'total-column')]//*[contains(@class, 'promotion-price')]> text to equal: "$4.50 CAD" - condition was met in 31ms
+ ✔ Expected element <#summary .discounts-section__applied> text to equal: "1 Applied" - condition was met in 31ms
+
+OK. 3 assertions passed. (5.275s)
+
+Running:  Apply hostess credits and click checkout from cart. Verify it takes to checkout page
+ ✔ Element <#summary button#apply> was visible after 28 milliseconds.
+ ✔ Expected element <h2.top-5.bottom-5.num.inline-block.pull-right> text to equal: "$94.20 CAD" - condition was met in 42ms
+ ✔ Element <#checkout .main-checkout-containter .btn.checkout:enabled> was visible after 56 milliseconds.
+ ✔ Element <#generic-modal-container> was visible after 559 milliseconds.
+ ✔ Element <#generic-modal-container> was not visible after 167 milliseconds.
+ ✔ Element <#checkout .main-checkout-containter .btn.checkout:enabled> was not present after 21 milliseconds.
+ ✔ Element <#checkout> was visible after 706 milliseconds.
+ ✔ Expected element <//*[@id="content"]//*[text()[contains(.,"Checkout")]]> text to equal: "CHECKOUT" - condition was met in 43ms
+
+OK. 8 assertions passed. (5.077s)
+
+Running:  on checkout page cart items and cart summary are correct
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Numbers 0-9" - condition was met in 62ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KC002GD2" - condition was met in 23ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Gold" - condition was met in 28ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "2" - condition was met in 27ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Qty: 1" - condition was met in 25ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'price_retail')]> text to contain: "$9.00 CAD" - condition was met in 64ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Diaper Pin')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Diaper Pin" - condition was met in 39ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Diaper Pin')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KA026SVR" - condition was met in 34ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Diaper Pin')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Silver" - condition was met in 26ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Diaper Pin')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Qty: 1" - condition was met in 28ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Diaper Pin')]]])[1]//*[contains(@class, 'price_retail')]> text to contain: "$11.00 CAD" - condition was met in 38ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Beaded Necklace')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Beaded Necklace" - condition was met in 41ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Beaded Necklace')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KN011G" - condition was met in 25ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Beaded Necklace')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Qty: 2" - condition was met in 23ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Beaded Necklace')]]])[1]//*[contains(@class, 'price_retail')]> text to contain: "$36.00 CAD" - condition was met in 36ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Geo Cut Out Letter')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Geo Cut Out Letter" - condition was met in 35ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Geo Cut Out Letter')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KC008GA" - condition was met in 28ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Geo Cut Out Letter')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Qty: 1" - condition was met in 29ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Geo Cut Out Letter')]]])[1]//*[contains(concat(' ', @class, ' '), ' price_sale ')]> text to contain: "$7.70 CAD" - condition was met in 45ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Geo Cut Out Letter')]]])[1]//*[contains(concat(' ', @class, ' '), ' price_sale_before ')]> text to contain: "$11.00 CAD" - condition was met in 35ms
+ ✔ Element <.hostess_credits> was present after 16 milliseconds.
+ ✔ Expected element <.hostess_credits> text to equal: "Credits
+-$1.00 CAD" - condition was met in 34ms
+ ✔ Element <.half-off_discount> was present after 15 milliseconds.
+ ✔ Expected element <.half-off_discount> text to equal: "Half-off Discounts
+- $4.50 CAD" - condition was met in 32ms
+ ✔ Element <.subtotal .price> was visible after 27 milliseconds.
+ ✔ Expected element <.subtotal .price> text to equal: "$94.20 CAD" - condition was met in 26ms
+  Warn: WaitForElement found 2 elements for selector ".shipping .price". Only the first one will be checked.
+ ✔ Element <.shipping .price> was visible after 29 milliseconds.
+ ✔ Expected element <.shipping .price> text to match: "/^\$[1-9]\d*\.\d{2} CAD$/m" - condition was met in 26ms
+ ✔ Element <.js-tax-spinner> was not visible after 26 milliseconds.
+
+OK. 29 assertions passed. (2.952s)
+
+Running:  In step 2 of checkout user is able to enter the shipping info
+ ✔ Expected element <//div[contains(@class, 'panel-default') and descendant::div[contains(@class, 'panel-title') and text()[contains(.,'Shipping')]]]> to be visible - condition was met in 29ms
+ ✔ Element <Section[name=shippingStep],Element[name=@addressLine1]> was visible after 70 milliseconds.
+ ✔ Element <Section[name=shippingStep],Element[name=@phone]> was visible after 38 milliseconds.
+ ✔ Element <.btn-group> was visible after 32 milliseconds.
+ ✔ Testing if element <//*[@class='radio' and contains(., '4-7')]> contains text: "Standard Shipping (4-7 business days) - $7.95 CAD".
+ ✔ Testing if element <//*[@class='radio' and contains(., '2-5')]> contains text: "Expedited Shipping (2-5 business days) - $18.95 CAD".
+ ✔ Element <//*[@class='radio' and contains(., '4-7')]> was visible after 30 milliseconds.
+ ✔ Expected element <//*[@class='radio' and contains(., '4-7')]/label/input> to be selected - condition was met in 26ms
+ ✔ Element <.sd-info> was visible after 34 milliseconds.
+ ✔ Element <.sd-info[data-toggle="popover"]> was visible after 31 milliseconds.
+ ✔ Expected element <.sd-info[data-toggle="popover"]> to have attribute "data-content" which equals: "We cannot ship to a PO Box. Free shipping coupons will cover the standard shipping amount." - condition was met in 24ms
+ ✔ Element <//*[@class='radio' and contains(., '2-5')]> was visible after 35 milliseconds.
+ ✔ Element <Section[name=shippingStep],Element[name=@continue]> was visible after 54 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 55 milliseconds.
+ ✔ Expected element <Section[name=shipping],Element[name=@price]> text to equal: "$18.95 CAD" - condition was met in 71ms
+ ✔ Element <div a.js-change> was visible after 27 milliseconds.
+ ✔ Element <button#apply> was visible after 31 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 34 milliseconds.
+ ✔ Element <.js-tax> was visible after 31 milliseconds.
+
+OK. 19 assertions passed. (9.811s)
+
+Running:  Enter billing info, verify total and place order
+ ✔ Expected element <.total .price> text to equal: "$125.66 CAD" - condition was met in 2365ms
+ ✔ Element <Section[name=billingStep],Element[name=@creditCardInfoHeader]> was visible after 48 milliseconds.
+There are saved CCs. Entering new one
+ ✔ Element <(//*[text()[contains(., "Enter a New Credit Card")]])[1]/parent::label> was visible after 28 milliseconds.
+ ✔ Element <Section[name=billingStep],Element[name=@firstName]> was visible after 50 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 55 milliseconds.
+ ✔ Element <#place_order> was visible after 33 milliseconds.
+ ✔ Element <#place_order> was not present after 5394 milliseconds.
+
+OK. 7 assertions passed. (9.076s)
+
+Running:  Order is successfully placed, user redirected to Order confirmation page
+ ✔ Element <Section[name=thankYou],Element[name=@text]> was visible after 556 milliseconds.
+ ✔ Expected element <Section[name=thankYou],Element[name=@text]> text to contain: "has been placed" - condition was met in 70ms
+ ✔ Element <.referral-sharing .close> was visible after 1953 milliseconds.
+ ✔ Element <#shipping> was visible after 573 milliseconds.
+ ✔ Testing if element <#shipping> contains text: "$18.95 CAD".
+ ✔ Element <.hostess_credits> was present after 16 milliseconds.
+ ✔ Expected element <.hostess_credits> text to equal: "Credits
+-$1.00 CAD" - condition was met in 26ms
+ ✔ Element <.half-off_discount> was present after 13 milliseconds.
+ ✔ Expected element <.half-off_discount> text to equal: "Half-off Discounts
+- $4.50 CAD" - condition was met in 25ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Numbers 0-9" - condition was met in 32ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KC002GD2" - condition was met in 20ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Gold" - condition was met in 19ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "2" - condition was met in 20ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(@class, 'col-xs-4')]> text to contain: "1" - condition was met in 28ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(@class, 'price')]> text to contain: "$9.00 CAD" - condition was met in 29ms
+ ✔ Expected element <((//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Numbers 0-9')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(concat(' ', @class, ' '), ' price ')])[last()]> text to contain: "$9.00 CAD" - condition was met in 32ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Diaper Pin')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Diaper Pin" - condition was met in 30ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Diaper Pin')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KA026SVR" - condition was met in 19ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Diaper Pin')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Silver" - condition was met in 19ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Diaper Pin')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(@class, 'col-xs-4')]> text to contain: "1" - condition was met in 30ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Diaper Pin')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(@class, 'price')]> text to contain: "$11.00 CAD" - condition was met in 31ms
+ ✔ Expected element <((//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Diaper Pin')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(concat(' ', @class, ' '), ' price ')])[last()]> text to contain: "$11.00 CAD" - condition was met in 30ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Beaded Necklace')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Beaded Necklace" - condition was met in 31ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Beaded Necklace')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KN011G" - condition was met in 26ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Beaded Necklace')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(@class, 'col-xs-4')]> text to contain: "2" - condition was met in 37ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Beaded Necklace')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(@class, 'price')]> text to contain: "$36.00 CAD" - condition was met in 43ms
+ ✔ Expected element <((//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Beaded Necklace')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(concat(' ', @class, ' '), ' price ')])[last()]> text to contain: "$72.00 CAD" - condition was met in 30ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Geo Cut Out Letter')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Geo Cut Out Letter" - condition was met in 30ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Geo Cut Out Letter')]]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KC008GA" - condition was met in 19ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Geo Cut Out Letter')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(@class, 'col-xs-4')]> text to contain: "1" - condition was met in 31ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Geo Cut Out Letter')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(concat(' ', @class, ' '), ' price_sale ')]> text to contain: "$7.70 CAD" - condition was met in 30ms
+ ✔ Expected element <(//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Geo Cut Out Letter')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(concat(' ', @class, ' '), ' price_sale_before ')]> text to contain: "$11.00 CAD" - condition was met in 30ms
+ ✔ Expected element <((//div[contains(@class, 'cart-item-block') and .//div[text()[contains(.,'Geo Cut Out Letter')]]])[1]//*[contains(@class, 'cart-item-price')]//*[contains(concat(' ', @class, ' '), ' price ')])[last()]> text to contain: "$7.70 CAD" - condition was met in 30ms
+
+OK. 33 assertions passed. (8.082s)
+
+Running:  Verify order type; designer and design session info not present in My Orders page
+ ✔ Element <Section[name=desktopUserNavReg],Element[name=@dropdownToggle]> was visible after 64 milliseconds.
+ ✔ Element <.user-nav-region .dropdown #my-orders> was visible after 38 milliseconds.
+  Warn: WaitForElement found 27 elements for selector "//*[contains(@class, "order-list")]//a". Only the first one will be checked.
+ ✔ Element <//*[contains(@class, "order-list")]//a> was visible after 559 milliseconds.
+ ✔ Expected element <//table[@class='table table-striped']//tbody//tr[td//*[text()[contains(.,'20381390')]]]/td[1]> text to contain: "10/19/2018" - condition was met in 31ms
+ ✔ Expected element <//table[@class='table table-striped']//tbody//tr[td//*[text()[contains(.,'20381390')]]]/td[2]> text to equal: "20381390" - condition was met in 32ms
+ ✔ Expected element <//table[@class='table table-striped']//tbody//tr[td//*[text()[contains(.,'20381390')]]]/td[3]> text to equal: "Web Hostess Order" - condition was met in 29ms
+  Warn: WaitForElement found 27 elements for selector "//*[contains(@class, "order-list")]//a". Only the first one will be checked.
+ ✔ Element <//*[contains(@class, "order-list")]//a> was visible after 19 milliseconds.
+ ✔ Expected element <//table[@class='table table-striped']//tbody//tr[td//*[text()[contains(.,'20381390')]]]/td[4]> text to contain: "---" - condition was met in 32ms
+  Warn: WaitForElement found 27 elements for selector "//*[contains(@class, "order-list")]//a". Only the first one will be checked.
+ ✔ Element <//*[contains(@class, "order-list")]//a> was visible after 19 milliseconds.
+ ✔ Expected element <//table[@class='table table-striped']//tbody//tr[td//*[text()[contains(.,'20381390')]]]/td[5]> text to contain: "---" - condition was met in 29ms
+
+OK. 10 assertions passed. (1.117s)
+
+Running:  Verify design session information is not present in order details page
+ ✔ Element <.order-list> was visible after 30 milliseconds.
+ ✔ Element <#section-content h2, #section-content h4.order-id> was visible after 568 milliseconds.
+ ✔ Expected element <#section-content h2, #section-content h4.order-id> text to contain: "ORDER # 20381390" - condition was met in 24ms
+ ✔ Element <#section-content h2, #section-content h4.order-id> was visible after 16 milliseconds.
+ ✔ Expected element <#section-content h2, #section-content h4.order-id> text to contain: "- PLACED" - condition was met in 18ms
+ ✔ Expected element <h2 + p> text to match: "/Placed on Friday October 19, 2018 at \d{1,2}:\d{1,2} [a|p]m P[D|S]T/" - condition was met in 30ms
+ ✔ Expected element <//div[@class='bottom-20']//*[text()[contains(.,'Designer')]]/following-sibling::div> to not be present - element was not found in 14ms.
+ ✔ Expected element <(//*[contains(@class, "shipping-and-payment")]//div[h5[contains(.,"Design Session")]]//div)[1]> to not be present - element was not found in 14ms.
+ ✔ Element <.hostess_credits> was visible after 22 milliseconds.
+ ✔ Expected element <.hostess_credits> text to contain: "Credits" - condition was met in 26ms
+ ✔ Expected element <.hostess_credits> text to contain: "-$1.00" - condition was met in 18ms
+ ✔ Element <.half-off_discount> was visible after 22 milliseconds.
+ ✔ Expected element <.half-off_discount> text to contain: "Half-off Discounts" - condition was met in 26ms
+ ✔ Expected element <.half-off_discount> text to contain: "- $4.50" - condition was met in 19ms
+ ✔ Element <.row.shipping-and-payment> was visible after 26 milliseconds.
+ ✔ Expected element <.row.shipping-and-payment> text to contain: "SHIPPING INFO
+Customer CA For ecom hostess corp order euuoourca
+3964 Paris St
+Apt 10
+Sudbury, Saskatchewan
+S4P 3Y2 Canada
+(705) 929-4397
+" - condition was met in 37ms
+ ✔ Element <.row.shipping-and-payment> was visible after 16 milliseconds.
+ ✔ Expected element <.row.shipping-and-payment> text to contain: "SHIPPING METHOD
+Expedited Shipping (2-5 business days) $18.95 CAD" - condition was met in 36ms
+ ✔ Element <.row.shipping-and-payment> was visible after 18 milliseconds.
+ ✔ Expected element <.row.shipping-and-payment> text to contain: "EMAIL
+customer-1003632008@workflowstest.com" - condition was met in 27ms
+ ✔ Element <.row.shipping-and-payment> was visible after 17 milliseconds.
+ ✔ Expected element <.row.shipping-and-payment> text to contain: "PAYMENT & BILLING
+Billing address is the same as shipping" - condition was met in 26ms
+ ✔ Element <.row.shipping-and-payment> was visible after 16 milliseconds.
+ ✔ Expected element <.row.shipping-and-payment> text to contain: "PAYMENT INFO
+$125.66 CAD applied to
+Theresa Cyphers VISA **** ***** **1111" - condition was met in 25ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Numbers 0-9")])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Numbers 0-9" - condition was met in 31ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Numbers 0-9")])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KC002GD2" - condition was met in 20ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Numbers 0-9")])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Gold" - condition was met in 19ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Numbers 0-9")])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "2" - condition was met in 24ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Numbers 0-9")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][1]> text to equal: "1" - condition was met in 29ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Numbers 0-9")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][2]> text to contain: "$9.00 CAD" - condition was met in 30ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Numbers 0-9")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][3]> text to contain: "$9.00 CAD" - condition was met in 30ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Diaper Pin")])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Diaper Pin" - condition was met in 33ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Diaper Pin")])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KA026SVR" - condition was met in 21ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Diaper Pin")])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Silver" - condition was met in 19ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Diaper Pin")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][1]> text to equal: "1" - condition was met in 30ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Diaper Pin")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][2]> text to contain: "$11.00 CAD" - condition was met in 30ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Diaper Pin")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][3]> text to contain: "$11.00 CAD" - condition was met in 31ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Beaded Necklace")])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Beaded Necklace" - condition was met in 31ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Beaded Necklace")])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KN011G" - condition was met in 20ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Beaded Necklace")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][1]> text to equal: "2" - condition was met in 31ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Beaded Necklace")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][2]> text to contain: "$36.00 CAD" - condition was met in 34ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Beaded Necklace")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][3]> text to contain: "$72.00 CAD" - condition was met in 31ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Geo Cut Out Letter")])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Geo Cut Out Letter" - condition was met in 32ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Geo Cut Out Letter")])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "KC008GA" - condition was met in 24ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Geo Cut Out Letter")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][1]> text to equal: "1" - condition was met in 34ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Geo Cut Out Letter")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][2]> text to contain: "$11.00 CAD" - condition was met in 36ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Geo Cut Out Letter")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][2]> text to contain: "$7.70 CAD" - condition was met in 20ms
+ ✔ Expected element <(//*[contains(@class, 'cart-item-block') and contains(.,"Geo Cut Out Letter")])[1]//*[contains(@class, 'row')]//*[contains(@class, 'col')][3]> text to contain: "$7.70 CAD" - condition was met in 31ms
+ ✔ Expected element <.subtotal .price> text to equal: "$94.20 CAD" - condition was met in 30ms
+ ✔ Expected element <.shipping .price> text to equal: "$18.95 CAD" - condition was met in 30ms
+ ✔ Expected element <.tax .js-tax> text to equal: "$12.51 CAD" - condition was met in 30ms
+ ✔ Expected element <.total .price> text to equal: "$125.66 CAD" - condition was met in 29ms
+ ✔ Expected element <//*[contains(@class, 'cancel') or contains(@id, "cancel") or text()[contains(.,'Cancel Order')]]> to not be present - element was not found in 15ms.
+
+OK. 53 assertions passed. (2.116s)
+
+OK. 255  total assertions passed. (2m 27s)
+Terminated: 15
