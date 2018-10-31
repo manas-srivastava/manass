@@ -1,0 +1,185 @@
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage stelladot-ca --tag settings
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=stelladot-ca
++ npm test -- --tag settings
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "settings"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF stelladot-sampling-all-qualify-enabled
+Got false as value for FF stelladot-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Lounge / Common / Settings / Settings Spec] Test Suite
+===========================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags loungeEditSettingsCA) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+ ✔ Passed [ok]: Starting seeding of subscription for data with tags loungeEditSettingsCA) ok
+ ✔ Passed [ok]: Retrying for subscription: in progress ok
+ ✔ Passed [ok]: Seeded subscription ok
+
+Running:  navigation to settings page opens "Account Details" section
+ ✔ Element <#login-field> was present after 18 milliseconds.
+ ✔ Element <#password-field> was present after 14 milliseconds.
+Entered "dsr_1000335006@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 26 milliseconds.
+ ✔ Element <#signin_submit> was not present after 3466 milliseconds.
+ ✔ Element <.keyloader> was present after 15 milliseconds.
+ ✔ Element <.keyloader> was not visible after 22 milliseconds.
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'Settings')]]> was visible after 54 milliseconds.
+ ✔ Expected element <//h4[text()[contains(.,'Account Details')]]> to be visible - condition was met in 628ms
+ ✔ Expected element <#section-content h4> text to match: "/ACCOUNT DETAILS/i" - condition was met in 35ms
+ ✔ Expected element <.designer-name> text to equal: "Dsr CA SD Edit Settings hhwehk" - condition was met in 33ms
+ ✔ Expected element <.basic-info> text to match: "/Stylist ID:\s+\d+/i" - condition was met in 36ms
+ ✔ Expected element <.basic-info> text to match: "/Stylist since/i" - condition was met in 29ms
+ ✔ Expected element <.basic-info> text to match: "/\bMentor\b/i" - condition was met in 55ms
+ ✔ Expected element <#email> to have value equal: "dsr_1000335006@workflowstest.com" - condition was met in 57ms
+ ✔ Expected element <#nickname> to have value equal: "Tom" - condition was met in 59ms
+ ✔ Expected element <//div[input[@id='email']]/label> text to equal: "EMAIL" - condition was met in 63ms
+ ✔ Expected element <[for=nickname]> text to equal: "NICKNAME" - condition was met in 73ms
+ ✔ Expected element <//*[contains(@class, 'col-md-6') and contains(.,'Birthday')]> text to equal: "Birthday
+10/31/2000" - condition was met in 57ms
+ ✔ Expected element <//*[contains(@class, 'col-md-6') and contains(.,'Social')]> text to match: "/Social Insurance Number
+XXX-XX\d-\d{3}/" - condition was met in 45ms
+ ✔ Expected element <//big[text()[contains(.,'Shipping Address')]]> text to equal: "Shipping Address" - condition was met in 29ms
+ ✔ Expected element <//big[text()[contains(.,'Account Address')]]> text to equal: "Account Address" - condition was met in 32ms
+ ✔ Expected element <[for=account_country]> text to equal: "COUNTRY" - condition was met in 29ms
+ ✔ Expected element <#account_address1 + span> text to equal: "Street name, number, PO Box, c/o" - condition was met in 31ms
+ ✔ Expected element <#account_address2 + span> text to equal: "(Optional) Apartment, suite, unit, floor, building, etc." - condition was met in 30ms
+ ✔ Expected element <//div[input[@id='account_city']]/label> text to equal: "CITY" - condition was met in 32ms
+ ✔ Expected element <//div[contains(@class, 'form-group') and (descendant::select[@id='account_state'])]/label> text to equal: "PROVINCE" - condition was met in 29ms
+ ✔ Expected element <//div[input[@id='account_zip_code']]/label> text to equal: "POSTAL CODE" - condition was met in 29ms
+ ✔ Expected element <//div[input[@id='account_phone_number']]/label> text to match: "/PHONE NUMBER/i" - condition was met in 29ms
+ ✔ Expected element <#account_country> to have value equal: "CA" - condition was met in 20ms
+ ✔ Expected element <#account_address1> to have value equal: "645 Howe St" - condition was met in 20ms
+ ✔ Expected element <#account_address2> to have value equal: "" - condition was met in 21ms
+ ✔ Expected element <#account_city> to have value equal: "Vancouver" - condition was met in 20ms
+ ✔ Expected element <#account_state> to have value equal: "BC" - condition was met in 23ms
+ ✔ Expected element <#account_zip_code> to have value equal: "V6C 2Y9" - condition was met in 20ms
+ ✔ Expected element <#account_phone_number> to have value equal: "(555) 555-5555" - condition was met in 21ms
+ ✔ Expected element <[for=shipping_country]> text to equal: "COUNTRY" - condition was met in 30ms
+ ✔ Expected element <#shipping_address1 + span> text to equal: "Street name, number, c/o" - condition was met in 29ms
+ ✔ Expected element <#shipping_address2 + span> text to equal: "(Optional) Apartment, suite, unit, floor, building, etc." - condition was met in 28ms
+ ✔ Expected element <//div[input[@id='shipping_city']]/label> text to equal: "CITY" - condition was met in 29ms
+ ✔ Expected element <//div[contains(@class, 'form-group') and (descendant::select[@id='shipping_state'])]/label> text to equal: "PROVINCE" - condition was met in 31ms
+ ✔ Expected element <//div[input[@id='shipping_zip_code']]/label> text to equal: "POSTAL CODE" - condition was met in 30ms
+ ✔ Expected element <//div[input[@id='shipping_phone_number']]/label> text to match: "/PHONE NUMBER/i" - condition was met in 29ms
+ ✔ Expected element <#shipping_country> to have value equal: "CA" - condition was met in 20ms
+ ✔ Expected element <#shipping_address1> to have value equal: "645 Howe St" - condition was met in 22ms
+ ✔ Expected element <#shipping_address2> to have value equal: "" - condition was met in 21ms
+ ✔ Expected element <#shipping_city> to have value equal: "Vancouver" - condition was met in 20ms
+ ✔ Expected element <#shipping_state> to have value equal: "BC" - condition was met in 22ms
+ ✔ Expected element <#shipping_zip_code> to have value equal: "V6C 2Y9" - condition was met in 20ms
+ ✔ Expected element <#shipping_phone_number> to have value equal: "(555) 555-5555" - condition was met in 21ms
+
+OK. 49 assertions passed. (24.579s)
+
+Running:  Verify Shipping Address country contains correct non editable Country
+ ✔ Expected element <#shipping_country> to have value equal: "CA" - condition was met in 15ms
+ ✔ Expected element <#shipping_country> to not be enabled - condition was met in 19ms
+
+OK. 2 assertions passed. (37ms)
+
+Running:  on "Account Details" tab should be able to update account info
+ ✔ Element <//h4[text()[contains(.,'Account Details')]]> was visible after 18 milliseconds.
+ ✔ Element <button.save> was visible after 28 milliseconds.
+ ✔ Element <.ui-pnotify-title> was visible after 541 milliseconds.
+ ✔ Element <.ui-pnotify-title> was visible after 18 milliseconds.
+ ✔ Expected element <.ui-pnotify-title> to be visible in 20000ms - condition was met in 19ms
+ ✔ Expected element <.ui-pnotify-title> text to equal: "SUCCESS!" - condition was met in 26ms
+ ✔ Expected element <.ui-pnotify-text> to be visible in 20000ms - condition was met in 29ms
+ ✔ Expected element <.ui-pnotify-text> text to equal: "Your changes have been saved" - condition was met in 28ms
+
+OK. 8 assertions passed. (4.144s)
+
+Running:  on "Payment Methods" user is able to Add a new payment method
+ ✔ Element <.settings-left-nav #payment-methods> was visible after 29 milliseconds.
+ ✔ Expected element <.payments h3> text to equal: "Payments" - condition was met in 47ms
+ ✔ Element <.payment-method.js-new-payment> was visible after 32 milliseconds.
+ ✔ Element <#first_name> was visible after 554 milliseconds.
+ ✔ Expected element <.alert> text to match: "/Your payment method has been added/i" - condition was met in 7920ms
+
+OK. 5 assertions passed. (9.996s)
+
+Running:  on "Important Documents" user should be able to view info about policies and IBO agreement
+ ✔ Element <.settings-left-nav #documents> was visible after 25 milliseconds.
+ ✔ Expected element <#section-content h4> text to equal: "IMPORTANT DOCUMENTS" - condition was met in 44ms
+ ✔ Passed [equal]: 200 == 200
+ ✔ Passed [equal]: application/pdf == application/pdf
+ ✔ Passed [equal]: 200 == 200
+ ✔ Passed [equal]: application/pdf == application/pdf
+
+OK. 6 assertions passed. (2.6s)
+
+Running:  Logout and Verify that user can not login with old credentials
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'Sign Out')]]> was visible after 35 milliseconds.
+ ✔ Element <#login-field> was present after 80 milliseconds.
+ ✔ Element <#password-field> was present after 24 milliseconds.
+Entered "dsr_1000335006@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 17 milliseconds.
+ ✔ Element <#loginError> was visible after 1059 milliseconds.
+ ✔ Expected element <#loginError> text to equal: "You've entered an invalid email address, Stylist ID, or password." - condition was met in 42ms
+
+OK. 6 assertions passed. (2.936s)
+
+Running:  Login with new credntials and verify account details
+ ✔ Element <#login-field> was present after 10 milliseconds.
+ ✔ Element <#password-field> was present after 9 milliseconds.
+Entered "newcaemail2018103135228933@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 11 milliseconds.
+ ✔ Element <#signin_submit> was not present after 2430 milliseconds.
+ ✔ Element <.keyloader> was present after 34 milliseconds.
+ ✔ Element <.keyloader> was not visible after 23 milliseconds.
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'Settings')]]> was visible after 44 milliseconds.
+ ✔ Expected element <//h4[text()[contains(.,'Account Details')]]> to be visible - condition was met in 3194ms
+ ✔ Expected element <#section-content h4> text to match: "/ACCOUNT DETAILS/i" - condition was met in 25ms
+ ✔ Expected element <.designer-name> text to equal: "Dsr CA SD Edit Settings hhwehk" - condition was met in 29ms
+ ✔ Expected element <.basic-info> text to match: "/Stylist ID:\s+\d+/i" - condition was met in 31ms
+ ✔ Expected element <.basic-info> text to match: "/Stylist since/i" - condition was met in 19ms
+ ✔ Expected element <.basic-info> text to match: "/\bMentor\b/i" - condition was met in 19ms
+ ✔ Expected element <#email> to have value equal: "newcaemail2018103135228933@workflowstest.com" - condition was met in 20ms
+ ✔ Expected element <#nickname> to have value equal: "TomNJerry" - condition was met in 19ms
+ ✔ Expected element <//div[input[@id='email']]/label> text to equal: "EMAIL" - condition was met in 29ms
+ ✔ Expected element <[for=nickname]> text to equal: "NICKNAME" - condition was met in 28ms
+ ✔ Expected element <//*[contains(@class, 'col-md-6') and contains(.,'Birthday')]> text to equal: "Birthday
+10/31/2000" - condition was met in 30ms
+ ✔ Expected element <//*[contains(@class, 'col-md-6') and contains(.,'Social')]> text to match: "/Social Insurance Number
+XXX-XX\d-\d{3}/" - condition was met in 31ms
+ ✔ Expected element <//big[text()[contains(.,'Shipping Address')]]> text to equal: "Shipping Address" - condition was met in 28ms
+ ✔ Expected element <//big[text()[contains(.,'Account Address')]]> text to equal: "Account Address" - condition was met in 29ms
+ ✔ Expected element <[for=account_country]> text to equal: "COUNTRY" - condition was met in 28ms
+ ✔ Expected element <#account_address1 + span> text to equal: "Street name, number, PO Box, c/o" - condition was met in 28ms
+ ✔ Expected element <#account_address2 + span> text to equal: "(Optional) Apartment, suite, unit, floor, building, etc." - condition was met in 28ms
+ ✔ Expected element <//div[input[@id='account_city']]/label> text to equal: "CITY" - condition was met in 30ms
+ ✔ Expected element <//div[contains(@class, 'form-group') and (descendant::select[@id='account_state'])]/label> text to equal: "PROVINCE" - condition was met in 29ms
+ ✔ Expected element <//div[input[@id='account_zip_code']]/label> text to equal: "POSTAL CODE" - condition was met in 32ms
+ ✔ Expected element <//div[input[@id='account_phone_number']]/label> text to match: "/PHONE NUMBER/i" - condition was met in 30ms
+ ✔ Expected element <#account_country> to have value equal: "CA" - condition was met in 20ms
+ ✔ Expected element <#account_address1> to have value equal: "200 New Block" - condition was met in 20ms
+ ✔ Expected element <#account_address2> to have value equal: "Apt 4B" - condition was met in 19ms
+ ✔ Expected element <#account_city> to have value equal: "Village two" - condition was met in 20ms
+ ✔ Expected element <#account_state> to have value equal: "MB" - condition was met in 19ms
+ ✔ Expected element <#account_zip_code> to have value equal: "R1P 0E0" - condition was met in 19ms
+ ✔ Expected element <#account_phone_number> to have value equal: "(111) 222-4444" - condition was met in 21ms
+ ✔ Expected element <[for=shipping_country]> text to equal: "COUNTRY" - condition was met in 32ms
+ ✔ Expected element <#shipping_address1 + span> text to equal: "Street name, number, c/o" - condition was met in 28ms
+ ✔ Expected element <#shipping_address2 + span> text to equal: "(Optional) Apartment, suite, unit, floor, building, etc." - condition was met in 29ms
+ ✔ Expected element <//div[input[@id='shipping_city']]/label> text to equal: "CITY" - condition was met in 30ms
+ ✔ Expected element <//div[contains(@class, 'form-group') and (descendant::select[@id='shipping_state'])]/label> text to equal: "PROVINCE" - condition was met in 34ms
+ ✔ Expected element <//div[input[@id='shipping_zip_code']]/label> text to equal: "POSTAL CODE" - condition was met in 29ms
+ ✔ Expected element <//div[input[@id='shipping_phone_number']]/label> text to match: "/PHONE NUMBER/i" - condition was met in 32ms
+ ✔ Expected element <#shipping_country> to have value equal: "CA" - condition was met in 21ms
+ ✔ Expected element <#shipping_address1> to have value equal: "200 New Block" - condition was met in 22ms
+ ✔ Expected element <#shipping_address2> to have value equal: "Apt 4B" - condition was met in 23ms
+ ✔ Expected element <#shipping_city> to have value equal: "Village two" - condition was met in 21ms
+ ✔ Expected element <#shipping_state> to have value equal: "MB" - condition was met in 20ms
+ ✔ Expected element <#shipping_zip_code> to have value equal: "R1P 0E0" - condition was met in 20ms
+ ✔ Expected element <#shipping_phone_number> to have value equal: "(111) 222-4444" - condition was met in 20ms
+
+OK. 49 assertions passed. (8.6s)
+
+OK. 125  total assertions passed. (1m 1s)
+Terminated: 15
