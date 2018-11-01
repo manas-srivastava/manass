@@ -1,0 +1,181 @@
+
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage keep-ca --tag applyStoreCreditsToOrder
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=keep-ca
++ npm test -- --tag applyStoreCreditsToOrder
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "applyStoreCreditsToOrder"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF keep-referral-rewards-program
+Setting up value for FF keep-lounge-expedited-shipping-methods
+Setting up value for FF keep-sampling-all-qualify-enabled
+Got true as value for FF keep-referral-rewards-program
+Got true as value for FF keep-lounge-expedited-shipping-methods
+Got false as value for FF keep-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Lounge / Common / Credits / Apply Store Credits To Order Spec] Test Suite
+==============================================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags dsrWithStoreCreditsCA) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+ ✔ Passed [ok]: Starting seeding of subscription for data with tags dsrWithStoreCreditsCA) ok
+ ✔ Passed [ok]: Retrying for subscription: in progress ok
+ ✔ Passed [ok]: Seeded subscription ok
+
+Running:  sign in using dsr user with store credits
+ ✔ Element <#login-field> was present after 19 milliseconds.
+ ✔ Element <#password-field> was present after 30 milliseconds.
+Entered "ca_dsr_with_sc_2000376001@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 25 milliseconds.
+ ✔ Element <#signin_submit> was not present after 3094 milliseconds.
+ ✔ Expected element <Section[name=desktopUserNavReg],Element[name=@dropdownToggle]> text to contain: "C W" - condition was met in 69ms
+
+OK. 5 assertions passed. (14.414s)
+
+Running:  Cancel cart if any and verify cart is empty
+ ✔ Element <#cart> was visible after 2130 milliseconds.
+Canceling order from cart: Cart isn't empty. Canceling Order
+ ✔ Element <.cancel-order> was visible after 27 milliseconds.
+ ✔ Element <#order_cancel_modal> was visible after 571 milliseconds.
+ ✔ Element <#order_cancel_modal> was not present after 1092 milliseconds.
+
+OK. 4 assertions passed. (9.345s)
+
+Running:  Add first item from catalog to cart
+ ✔ Element <//*[contains(@class, 'hidden-xs')]//li[contains(@class, 'item-category')]/a[contains(@class, 'category-name') and text()[contains(.,'Charms')]]> was present after 1116 milliseconds.
+ ✔ Element <(//*[contains(@class, 'pdp-catalog-gallery') and not(contains(., 'Free Engraving') or contains(., 'Engravable') or contains(., 'Back in Stock') or descendant::*[contains(@class, 'out-of-stock-text')])])[1]> was present after 576 milliseconds.
+ ✔ Element <(//*[contains(@class, 'pdp-catalog-gallery') and not(contains(., 'Free Engraving') or contains(., 'Engravable') or contains(., 'Back in Stock') or descendant::*[contains(@class, 'out-of-stock-text')])])[1]> was not present after 39 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".num.bottom-5.no-margin". Only the first one will be checked.
+ ✔ Element <.num.bottom-5.no-margin> was visible after 581 milliseconds.
+ ✔ Element <#content .pdp-add-to-cart:enabled> was visible after 32 milliseconds.
+ ✔ Element <.item-added-notification[style*="display: block;"]> was visible after 1596 milliseconds.
+ ✔ Element <.pdp-name> was visible after 66 milliseconds.
+Adding "TREBLE CLEF" to cart
+
+OK. 7 assertions passed. (7.483s)
+
+Running:  Verify store credit automatically applied whole amount of order on checkout
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 1565 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 15 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was not present after 25 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 3668 milliseconds.
+ ✔ Element <.billing-store-credits> was visible after 34 milliseconds.
+ ✔ Expected element <Section[name=billingStep],Element[name=@totalCoveredByScInfo]> text to equal: "This customer's Store Credit or Gift Card covers the total amount of this order. No additional payment is needed." - condition was met in 55ms
+ ✔ Expected element <.total .price> text to equal: "$0.00 CAD" - condition was met in 35ms
+
+OK. 7 assertions passed. (9.312s)
+
+Running:  Verify that store credit is re-calculated when shipping address edited
+ ✔ Expected element <//div[contains(@class, 'panel-default') and descendant::div[contains(@class, 'panel-title') and text()[contains(.,'Shipping')]]]> to be visible - condition was met in 33ms
+ ✔ Element <Section[name=shippingStep],Element[name=@addressLine1]> was visible after 44 milliseconds.
+ ✔ Element <Section[name=shippingStep],Element[name=@phone]> was visible after 35 milliseconds.
+ ✔ Element <Section[name=shippingStep],Element[name=@continue]> was visible after 47 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 35 milliseconds.
+ ✔ Element <.billing-store-credits> was visible after 3665 milliseconds.
+ ✔ Expected element <Section[name=billingStep],Element[name=@totalCoveredByScInfo]> text to equal: "This customer's Store Credit or Gift Card covers the total amount of this order. No additional payment is needed." - condition was met in 40ms
+ ✔ Expected element <.total .price> text to equal: "$0.00 CAD" - condition was met in 31ms
+
+OK. 8 assertions passed. (5.371s)
+
+Running:  Verify the user can change the amount applied to partial store credit payment
+ ✔ Element <.js-tax-spinner> was not visible after 1100 milliseconds.
+ ✔ Element <span.js-store-credits-amount> was visible after 549 milliseconds.
+ ✔ Element <div a.js-change> was visible after 28 milliseconds.
+ ✔ Element <button#apply> was visible after 34 milliseconds.
+ ✔ Element <#store_credits_total> was not visible after 1109 milliseconds.
+ ✔ Element <#store_credits_total> was not visible after 16 milliseconds.
+ ✔ Expected element <span.js-store-credits-amount> text to equal: "$1.00" - condition was met in 26ms
+ ✔ Expected element <.js-store-credits> text to equal: "-$1.00 CAD" - condition was met in 29ms
+ ✔ Element <div a.js-change> was visible after 21 milliseconds.
+ ✔ Element <button#apply> was visible after 30 milliseconds.
+
+OK. 10 assertions passed. (5.551s)
+
+Running:  Verify user cannot apply more Store Credit than they have available in their account.
+ ✔ Element <input.qty> was visible after 1120 milliseconds.
+ ✔ Element <.form-group-qty-update button> was visible after 33 milliseconds.
+ ✔ Element <.form-group-qty-update button> was not visible after 6225 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 8402 milliseconds.
+ ✔ Element <div a.js-change> was visible after 31 milliseconds.
+ ✔ Element <button#apply> was visible after 45 milliseconds.
+ ✔ Element <div.ui-pnotify-text> was visible after 1067 milliseconds.
+ ✔ Testing if element <div.ui-pnotify-text> contains text: "You have tried to apply more Store Credit than you have available. Please check the amount.".
+ ✔ Element <.store-credits-form .js-cancel> was visible after 35 milliseconds.
+ ✔ Element <input.qty> was visible after 2171 milliseconds.
+ ✔ Element <.form-group-qty-update button> was visible after 51 milliseconds.
+ ✔ Element <.form-group-qty-update button> was not visible after 1074 milliseconds.
+
+OK. 12 assertions passed. (27.671s)
+
+Running:  Verify CC Details and Billing address are not required when order amount covered by SC
+ ✔ Expected element <Section[name=billingStep],Element[name=@firstName]> to not be present - element was not found in 19ms.
+ ✔ Expected element <Section[name=billingStep],Element[name=@lastName]> to not be present - element was not found in 9ms.
+ ✔ Expected element <Section[name=billingStep],Element[name=@ccNumber]> to not be present - element was not found in 16ms.
+
+OK. 3 assertions passed. (1.842s)
+
+Running:  Verify order fully payed with store credits can be placed
+ ✔ Element <.js-tax-spinner> was not visible after 3705 milliseconds.
+ ✔ Element <#place_order> was visible after 31 milliseconds.
+ ✔ Element <#place_order> was not present after 3101 milliseconds.
+ ✔ Element <h1> was visible after 548 milliseconds.
+ ✔ Expected element <h1> text to contain: "Your Order Has Been Placed!" - condition was met in 32ms
+
+OK. 5 assertions passed. (7.599s)
+
+Running:  Start new order with one item, checkout and verify store credit applied
+ ✔ Element <(//*[contains(@class, 'pdp-catalog-gallery') and not(contains(., 'Free Engraving') or contains(., 'Engravable') or contains(., 'Back in Stock') or descendant::*[contains(@class, 'out-of-stock-text')])])[1]> was present after 1188 milliseconds.
+ ✔ Element <(//*[contains(@class, 'pdp-catalog-gallery') and not(contains(., 'Free Engraving') or contains(., 'Engravable') or contains(., 'Back in Stock') or descendant::*[contains(@class, 'out-of-stock-text')])])[1]> was not present after 42 milliseconds.
+  Warn: WaitForElement found 2 elements for selector ".num.bottom-5.no-margin". Only the first one will be checked.
+ ✔ Element <.num.bottom-5.no-margin> was visible after 546 milliseconds.
+ ✔ Element <#content .pdp-add-to-cart:enabled> was visible after 34 milliseconds.
+ ✔ Element <.item-added-notification[style*="display: block;"]> was visible after 1598 milliseconds.
+ ✔ Element <.pdp-name> was visible after 52 milliseconds.
+Adding "TREBLE CLEF" to cart
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 1059 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 10 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was not present after 36 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 3655 milliseconds.
+ ✔ Element <.billing-store-credits> was visible after 31 milliseconds.
+ ✔ Expected element <Section[name=billingStep],Element[name=@totalCoveredByScInfo]> text to equal: "This customer's Store Credit or Gift Card covers the total amount of this order. No additional payment is needed." - condition was met in 51ms
+ ✔ Expected element <.total .price> text to equal: "$0.00 CAD" - condition was met in 45ms
+
+OK. 13 assertions passed. (16.452s)
+
+Running:  Verify store credit re-calculate if cart item is edited
+ ✔ Element <input.qty> was visible after 1097 milliseconds.
+ ✔ Element <.form-group-qty-update button> was visible after 44 milliseconds.
+ ✔ Element <.form-group-qty-update button> was not visible after 1153 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 12 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 10 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was not present after 50 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 3661 milliseconds.
+ ✔ Element <.billing-store-credits> was visible after 32 milliseconds.
+ ✔ Expected element <Section[name=billingStep],Element[name=@totalCoveredByScInfo]> text to equal: "This customer's Store Credit or Gift Card covers the total amount of this order. No additional payment is needed." - condition was met in 54ms
+ ✔ Expected element <.total .price> text to equal: "$0.00 CAD" - condition was met in 33ms
+
+OK. 10 assertions passed. (10.207s)
+
+Running:  Verify the order can be placed when being partially covered by store credits
+ ✔ Element <div a.js-change> was visible after 32 milliseconds.
+ ✔ Element <button#apply> was visible after 33 milliseconds.
+ ✔ Element <#store_credits_total> was not visible after 1113 milliseconds.
+ ✔ Element <Section[name=billingStep],Element[name=@creditCardInfoHeader]> was visible after 50 milliseconds.
+There are saved CCs. Entering new one
+ ✔ Element <(//*[text()[contains(., "Enter a New Credit Card")]])[1]/parent::label> was visible after 28 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "Section[name=billingStep],Element[name=@firstName]". Only the first one will be checked.
+ ✔ Element <Section[name=billingStep],Element[name=@firstName]> was visible after 70 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 33 milliseconds.
+ ✔ Element <#place_order> was visible after 36 milliseconds.
+ ✔ Element <#place_order> was not present after 11195 milliseconds.
+ ✔ Element <h1> was visible after 546 milliseconds.
+ ✔ Expected element <h1> text to contain: "Your Order Has Been Placed!" - condition was met in 28ms
+
+OK. 11 assertions passed. (14.782s)
+
+OK. 95  total assertions passed. (2m 18s)
+Terminated: 15
