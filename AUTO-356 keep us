@@ -1,0 +1,132 @@
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage keep-us --tag wishListAddingAndRemovingFromPdp
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=keep-us
++ npm test -- --tag wishListAddingAndRemovingFromPdp
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "wishListAddingAndRemovingFromPdp"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF keep-referral-rewards-program
+Setting up value for FF keep-lounge-expedited-shipping-methods
+Setting up value for FF keep-sampling-all-qualify-enabled
+Got true as value for FF keep-referral-rewards-program
+Got true as value for FF keep-lounge-expedited-shipping-methods
+Got false as value for FF keep-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Www / Common / Wishlist / Wish List Adding And Removing From Pdp Spec] Test Suite
+======================================================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags customerCredentials) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+
+Running:  Access a category/collection page from top menu and select any item
+ ✔ Element <#signin_submit> was present after 21 milliseconds.
+Entered "customer@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 19 milliseconds.
+ ✔ Element <#signin_submit> was not present after 3306 milliseconds.
+ ✔ Element <#nav-wishlist> was visible after 29 milliseconds.
+ ✔ Element <.wishlist-page> was present after 1732 milliseconds.
+Wishlist is empty. No need to remove items
+ ✔ Element <.menu a[href="/shop"]> was visible after 31 milliseconds.
+ ✔ Element <#category-dropdown a[href="/shop/category/14-bracelets"]> was visible after 43 milliseconds.
+ ✔ Element <(//*[contains(@class, 'pdp-catalog-gallery') and not(contains(., 'Engraving') or contains(., 'Engravable') or contains(., 'Test Product') or contains(., 'Ships TBD') or descendant::*[contains(@class, 'out-of-stock-text')])])[1]> was visible after 1604 milliseconds.
+ ✔ Element <#styles> was not present after 81 milliseconds.
+
+OK. 9 assertions passed. (28.577s)
+
+Running:  Click on heart icon and verify that heart icon is changed to liked state
+ ✔ Element <.pdp-name> was visible after 803 milliseconds.
+ ✔ Element <.num.bottom-5.no-margin> was visible after 31 milliseconds.
+ ✔ Element <.like-icon.likeable> was present after 14 milliseconds.
+ ✔ Element <//*[contains(@class, 'item-added-notification') and (contains(@style, 'display: block;') or contains(@style, 'display:block;'))]> was visible after 559 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'item-added-notification') and (contains(@style, 'display: block;') or contains(@style, 'display:block;'))]> text to equal: "Item added to Wishlist!
+VIEW WISHLIST" in 100ms - condition was met in 41ms
+
+OK. 5 assertions passed. (1.596s)
+
+Running:  Click on “Wishlist” link available in page header and verify that wishlist page is displayed
+ ✔ Expected element <#nav-wishlist> to be visible - condition was met in 29ms
+ ✔ Element <#nav-wishlist> was visible after 28 milliseconds.
+ ✔ Element <.wishlist-page> was visible after 585 milliseconds.
+ ✔ Expected element <.title> to be visible - condition was met in 32ms
+ ✔ Expected element <.title> text to equal: "YOUR WISHLIST" - condition was met in 25ms
+
+OK. 5 assertions passed. (841ms)
+
+Running:  Verify that the items added to wishlist in above steps are displayed
+ ✔ Expected element <.wishlist-item> to be visible - condition was met in 27ms
+ ✔ Expected element <Section[name=items],Element[name=@price]> to be visible - condition was met in 40ms
+ ✔ Expected element <Section[name=items],Element[name=@date]> to be visible - condition was met in 38ms
+
+OK. 3 assertions passed. (109ms)
+
+Running:  Verify that the correct count is displayed along with the page title
+ ✔ Expected element <.whishlist-title-container .items-count> text to equal: "1 item" - condition was met in 30ms
+
+OK. 1 assertions passed. (32ms)
+
+Running:  Verify that name and added date is displayed correctly for all items
+ ✔ Expected element <//*[@class="wishlist-item-bottom"][1]> text to contain: "Added 11/01/2018" - condition was met in 43ms
+ ✔ Expected element <Section[name=items],Element[name=@name]> text to contain: "WOOD PRINTED LEATHER BAND" - condition was met in 39ms
+ ✔ Expected element <//*[@class='wishlist-item' and descendant::*[text()[contains(.,'Wood Printed Leather Band')]]]//*[@class='price']> to be visible - condition was met in 23ms
+ ✔ Expected element <//*[@class='wishlist-item' and descendant::*[text()[contains(.,'Wood Printed Leather Band')]]]//*[@class='price']> text to contain: "$29" - condition was met in 25ms
+ ✔ Expected element <//*[@class='wishlist-item' and descendant::*[text()[contains(.,'Wood Printed Leather Band')]]]//*[contains(@class,'currency')]> text to equal: "" - condition was met in 29ms
+ ✔ Expected element <//*[@class='wishlist-item' and descendant::*[text()[contains(.,'Wood Printed Leather Band')]]]//*[contains(@class,'currency')]> to have attribute "class" which contains: "currency-usd" - condition was met in 42ms
+
+OK. 6 assertions passed. (207ms)
+
+Running:  Click on Sign Out link available under Hi <Username> menu and verify that user is successful able to logout
+ ✔ Element <Section[name=desktopUserNavReg],Element[name=@dropdownToggle]> was visible after 42 milliseconds.
+ ✔ Element <.user-nav-region .dropdown #logout> was visible after 32 milliseconds.
+
+OK. 2 assertions passed. (259ms)
+
+Running:  Click on Wishlist link available in the page header and verify that signin page is displayed
+ ✔ Element <#nav-wishlist> was visible after 50 milliseconds.
+
+OK. 1 assertions passed. (152ms)
+
+Running:  Login with a valid credentials of customer created in above steps and verify that user is directed to wishlist page
+ ✔ Element <#signin_submit> was present after 68 milliseconds.
+Entered "customer@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 13 milliseconds.
+ ✔ Element <.wishlist-page> was visible after 1577 milliseconds.
+ ✔ Expected element <.title> to be visible - condition was met in 29ms
+ ✔ Expected element <.title> text to equal: "YOUR WISHLIST" - condition was met in 28ms
+
+OK. 5 assertions passed. (2.55s)
+
+Running:  Verify all the items added to wishlist are displayed and verify share wishlist options
+ ✔ Expected element <.whishlist-title-container .items-count> text to equal: "1 item" - condition was met in 26ms
+ ✔ Expected element <//*[@class="wishlist-item-bottom"][1]> text to contain: "Added 11/01/2018" - condition was met in 31ms
+ ✔ Expected element <Section[name=items],Element[name=@name]> text to contain: "WOOD PRINTED LEATHER BAND" - condition was met in 40ms
+ ✔ Expected element <//*[@class='wishlist-item' and descendant::*[text()[contains(.,'Wood Printed Leather Band')]]]//*[@class='price']> to be visible - condition was met in 30ms
+ ✔ Expected element <//*[@class='wishlist-item' and descendant::*[text()[contains(.,'Wood Printed Leather Band')]]]//*[@class='price']> text to contain: "$29" - condition was met in 27ms
+ ✔ Expected element <//*[@class='wishlist-item' and descendant::*[text()[contains(.,'Wood Printed Leather Band')]]]//*[contains(@class,'currency')]> text to equal: "" - condition was met in 27ms
+ ✔ Expected element <//*[@class='wishlist-item' and descendant::*[text()[contains(.,'Wood Printed Leather Band')]]]//*[contains(@class,'currency')]> to have attribute "class" which contains: "currency-usd" - condition was met in 54ms
+ ✔ Element <.btn-share> was visible after 28 milliseconds.
+ ✔ Expected element <.btn-share> text to equal: "Share" - condition was met in 29ms
+ ✔ Expected element <.sharing #fb-message> text to equal: "Messenger" - condition was met in 42ms
+ ✔ Expected element <.sharing #fb-message> to have attribute "data-share-target" which equals: "messenger" - condition was met in 19ms
+ ✔ Expected element <.facebook-share> text to equal: "Facebook" - condition was met in 60ms
+ ✔ Expected element <.facebook-share> to have attribute "data-share-target" which equals: "facebook" - condition was met in 34ms
+ ✔ Expected element <.twitter-share> text to equal: "Twitter" - condition was met in 52ms
+ ✔ Expected element <.twitter-share> to have attribute "data-share-target" which equals: "twitter" - condition was met in 49ms
+ ✔ Expected element <.pinterest-share> text to equal: "Pinterest" - condition was met in 43ms
+ ✔ Expected element <.pinterest-share> to have attribute "data-share-target" which equals: "pinterest" - condition was met in 17ms
+ ✔ Expected element <.email-share> text to equal: "Email" - condition was met in 34ms
+ ✔ Expected element <.email-share> to have attribute "data-share-target" which equals: "mail" - condition was met in 17ms
+
+OK. 19 assertions passed. (768ms)
+
+Running:  Click the cross button for one of the items and verify that the item is removed from the wishlist
+ ✔ Expected element <Section[name=items],Element[name=@remove]> to be visible - condition was met in 39ms
+ ✔ Expected element <.empty-bag-desc> to be visible - condition was met in 36ms
+
+OK. 2 assertions passed. (169ms)
+
+OK. 58  total assertions passed. (40.796s)
+Terminated: 15
