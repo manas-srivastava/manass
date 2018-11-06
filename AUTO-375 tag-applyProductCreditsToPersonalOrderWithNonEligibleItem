@@ -1,0 +1,376 @@
+
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage stelladot-us --tag applyProductCreditsToPersonalOrderWithNonEligibleItem
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=stelladot-us
++ npm test -- --tag applyProductCreditsToPersonalOrderWithNonEligibleItem
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "applyProductCreditsToPersonalOrderWithNonEligibleItem"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF stelladot-sampling-all-qualify-enabled
+Got false as value for FF stelladot-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Lounge / Common / Credits / Apply Product Credits To Personal Order With Non Eligible Item Spec] Test Suite
+================================================================================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags toApplyProdCredToPersonalOrdTwoUS) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+ ✔ Passed [ok]: Starting seeding of subscription for data with tags toApplyProdCredToPersonalOrdTwoUS) ok
+ ✔ Passed [ok]: Retrying for subscription: in progress ok
+ ✔ Passed [ok]: Seeded subscription ok
+
+Running:  opening a new order page from the navigation dropdown
+ ✔ Element <#login-field> was present after 19 milliseconds.
+ ✔ Element <#password-field> was present after 19 milliseconds.
+Entered "us_dsr_100375005@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 17 milliseconds.
+ ✔ Element <#signin_submit> was not present after 3734 milliseconds.
+ ✔ Element <.keyloader> was present after 23 milliseconds.
+ ✔ Element <.keyloader> was not visible after 28 milliseconds.
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'Create Customer/Hostess Order')]]> was visible after 69 milliseconds.
+ ✔ Element <//*[@id="content"]//h1[text()[contains(.,'Create Orders')]]> was visible after 572 milliseconds.
+ ✔ Expected element <//*[@id="content"]//h1[text()[contains(.,'Create Orders')]]> text to equal: "Create Orders" - condition was met in 31ms
+
+OK. 9 assertions passed. (26.188s)
+
+Running:  dsr can start personal order
+ ✔ Element <#btn-dsr-order> was visible after 31 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1038 milliseconds.
+ ✔ Element <.cancel-order> was present after 1049 milliseconds.
+ ✔ Element <#order_cancel_modal> was visible after 553 milliseconds.
+ ✔ Element <.cancel-order> was not present after 1082 milliseconds.
+ ✔ Element <#btn-dsr-order> was visible after 25 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1046 milliseconds.
+ ✔ Element <//*[@id="content"]//h1[text()[contains(.,'Quick Add')]]> was visible after 558 milliseconds.
+ ✔ Expected element <//*[@id="content"]//h1[text()[contains(.,'Quick Add')]]> text to equal: "Quick Add" - condition was met in 39ms
+
+OK. 9 assertions passed. (8.799s)
+
+Running:  Verify Product Credits information on Add Item page
+ ✔ Element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-on-bag')]> was visible after 45 milliseconds.
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//h5> text to equal: "PRODUCT CREDIT" - condition was met in 42ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//strong> text to equal: "$150.00" - condition was met in 49ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-on-bag')]> text to equal: "(Applied on bag)" - condition was met in 38ms
+
+OK. 4 assertions passed. (181ms)
+
+Running:  add items to cart and proceed to cart page
+ ✔ Element <.searchbox-input> was visible after 30 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 51 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 31 milliseconds.
+ ✔ Element <(//*[contains(@class, 'hidden-xs') and not(contains(., "Engravable") or contains(., "Engraving"))]//button[contains(@class, 'addtocart') and not(@disabled) and not(contains(@style,'display: none;'))])[1]> was visible after 57 milliseconds.
+ ✔ Element <//*[@id='cart']//button[@id='view_cart' and (@disabled='' or contains(@class, 'disabled'))]> was not present after 1070 milliseconds.
+ ✔ Expected element <#cart h4 span> text to contain: "1" - condition was met in 32ms
+ ✔ Element <//*[@id='cart']//button[@id='view_cart' and not(@disabled='' or contains(@class, 'disabled'))]> was visible after 36 milliseconds.
+ ✔ Element <//*[@id='cart']//button[@id='view_cart' and not(@disabled='' or contains(@class, 'disabled'))]> was not present after 56 milliseconds.
+ ✔ Element <//*[@id="content"]//h1[text()[contains(.,'Bag')]]> was visible after 1581 milliseconds.
+ ✔ Expected element <//*[@id="content"]//h1[text()[contains(.,'Bag')]]> text to equal: "Bag" - condition was met in 28ms
+
+OK. 10 assertions passed. (7.468s)
+
+Running:  Verify product credit info and default credits applied
+ ✔ Element <#cart> was visible after 32 milliseconds.
+ ✔ Element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-below')]> was visible after 35 milliseconds.
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//h5> text to equal: "PRODUCT CREDIT" - condition was met in 27ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//strong> text to equal: "$150.00" - condition was met in 32ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-below')]> text to equal: "($0.00 applied)" - condition was met in 30ms
+ ✔ Element <//*[@class='clearfix' and contains(., 'Items without Stylist Discount and Product Credits')]/span[1]> was visible after 33 milliseconds.
+ ✔ Expected element <//*[@class='clearfix' and contains(., 'Items without Stylist Discount and Product Credits')]/span[1]> text to equal: "Items without Stylist Discount and Product Credits (1)" - condition was met in 30ms
+ ✔ Expected element <//*[@class='clearfix' and contains(., 'Items without Stylist Discount and Product Credits')]/span[2]> text to equal: "$28.00" - condition was met in 35ms
+ ✔ Expected element <//*[@id='before_total_block']//*[contains(@class, 'bottom-10') and contains(., 'Product Credits')]> to not be present - element was not found in 19ms.
+ ✔ Expected element <h2.top-5.bottom-5.num.inline-block.pull-right> text to equal: "$28.00" - condition was met in 44ms
+
+OK. 10 assertions passed. (3.336s)
+
+OK. 42  total assertions passed. (54.711s)
+Terminated: 15
+
+======================================================================
+
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage stelladot-ca --tag applyProductCreditsToPersonalOrderWithNonEligibleItem
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=stelladot-ca
++ npm test -- --tag applyProductCreditsToPersonalOrderWithNonEligibleItem
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "applyProductCreditsToPersonalOrderWithNonEligibleItem"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF stelladot-sampling-all-qualify-enabled
+Got false as value for FF stelladot-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Lounge / Common / Credits / Apply Product Credits To Personal Order With Non Eligible Item Spec] Test Suite
+================================================================================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags toApplyProdCredToPersonalOrdTwoCA) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+ ✔ Passed [ok]: Starting seeding of subscription for data with tags toApplyProdCredToPersonalOrdTwoCA) ok
+ ✔ Passed [ok]: Retrying for subscription: in progress ok
+ ✔ Passed [ok]: Seeded subscription ok
+
+Running:  opening a new order page from the navigation dropdown
+ ✔ Element <#login-field> was present after 23 milliseconds.
+ ✔ Element <#password-field> was present after 14 milliseconds.
+Entered "ca_dsr_100375006@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 17 milliseconds.
+ ✔ Element <#signin_submit> was not present after 4937 milliseconds.
+ ✔ Element <.keyloader> was present after 14 milliseconds.
+ ✔ Element <.keyloader> was not visible after 30 milliseconds.
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'Create Customer/Hostess Order')]]> was visible after 40 milliseconds.
+ ✔ Element <//*[@id="content"]//h1[text()[contains(.,'Create Orders')]]> was visible after 572 milliseconds.
+ ✔ Expected element <//*[@id="content"]//h1[text()[contains(.,'Create Orders')]]> text to equal: "Create Orders" - condition was met in 29ms
+
+OK. 9 assertions passed. (26.924s)
+
+Running:  dsr can start personal order
+ ✔ Element <#btn-dsr-order> was visible after 30 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1556 milliseconds.
+ ✔ Element <.cancel-order> was present after 531 milliseconds.
+ ✔ Element <#order_cancel_modal> was visible after 550 milliseconds.
+ ✔ Element <.cancel-order> was not present after 1040 milliseconds.
+ ✔ Element <#btn-dsr-order> was visible after 23 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1041 milliseconds.
+ ✔ Element <//*[@id="content"]//h1[text()[contains(.,'Quick Add')]]> was visible after 1056 milliseconds.
+ ✔ Expected element <//*[@id="content"]//h1[text()[contains(.,'Quick Add')]]> text to equal: "Quick Add" - condition was met in 26ms
+
+OK. 9 assertions passed. (9.251s)
+
+Running:  Verify Product Credits information on Add Item page
+ ✔ Element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-on-bag')]> was visible after 30 milliseconds.
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//h5> text to equal: "PRODUCT CREDIT" - condition was met in 29ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//strong> text to equal: "$150.00 CAD" - condition was met in 31ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-on-bag')]> text to equal: "(Applied on bag)" - condition was met in 25ms
+
+OK. 4 assertions passed. (120ms)
+
+Running:  add items to cart and proceed to cart page
+ ✔ Element <.searchbox-input> was visible after 28 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 583 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 27 milliseconds.
+ ✔ Element <(//*[contains(@class, 'hidden-xs') and not(contains(., "Engravable") or contains(., "Engraving"))]//button[contains(@class, 'addtocart') and not(@disabled) and not(contains(@style,'display: none;'))])[1]> was visible after 30 milliseconds.
+ ✔ Element <//*[@id='cart']//button[@id='view_cart' and (@disabled='' or contains(@class, 'disabled'))]> was not present after 1574 milliseconds.
+ ✔ Expected element <#cart h4 span> text to contain: "1" - condition was met in 23ms
+ ✔ Element <//*[@id='cart']//button[@id='view_cart' and not(@disabled='' or contains(@class, 'disabled'))]> was visible after 27 milliseconds.
+ ✔ Element <//*[@id='cart']//button[@id='view_cart' and not(@disabled='' or contains(@class, 'disabled'))]> was not present after 46 milliseconds.
+ ✔ Element <//*[@id="content"]//h1[text()[contains(.,'Bag')]]> was visible after 1584 milliseconds.
+ ✔ Expected element <//*[@id="content"]//h1[text()[contains(.,'Bag')]]> text to equal: "Bag" - condition was met in 24ms
+
+OK. 10 assertions passed. (8.402s)
+
+Running:  Verify product credit info and default credits applied
+ ✔ Element <#cart> was visible after 29 milliseconds.
+ ✔ Element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-below')]> was visible after 41 milliseconds.
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//h5> text to equal: "PRODUCT CREDIT" - condition was met in 31ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//strong> text to equal: "$150.00 CAD" - condition was met in 33ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-below')]> text to equal: "($0.00 CAD applied)" - condition was met in 29ms
+ ✔ Element <//*[@class='clearfix' and contains(., 'Items without Stylist Discount and Product Credits')]/span[1]> was visible after 29 milliseconds.
+ ✔ Expected element <//*[@class='clearfix' and contains(., 'Items without Stylist Discount and Product Credits')]/span[1]> text to equal: "Items without Stylist Discount and Product Credits (1)" - condition was met in 31ms
+ ✔ Expected element <//*[@class='clearfix' and contains(., 'Items without Stylist Discount and Product Credits')]/span[2]> text to equal: "$29.00 CAD" - condition was met in 37ms
+ ✔ Expected element <//*[@id='before_total_block']//*[contains(@class, 'bottom-10') and contains(., 'Product Credits')]> to not be present - element was not found in 14ms.
+ ✔ Expected element <h2.top-5.bottom-5.num.inline-block.pull-right> text to equal: "$29.00 CAD" - condition was met in 34ms
+
+OK. 10 assertions passed. (3.319s)
+
+OK. 42  total assertions passed. (57.278s)
+Terminated: 15
+
+======================================================================
+
+
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage keep-us --tag applyProductCreditsToPersonalOrderWithNonEligibleItem
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=keep-us
++ npm test -- --tag applyProductCreditsToPersonalOrderWithNonEligibleItem
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "applyProductCreditsToPersonalOrderWithNonEligibleItem"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF keep-referral-rewards-program
+Setting up value for FF keep-lounge-expedited-shipping-methods
+Setting up value for FF keep-sampling-all-qualify-enabled
+Got true as value for FF keep-referral-rewards-program
+Got true as value for FF keep-lounge-expedited-shipping-methods
+Got false as value for FF keep-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Lounge / Common / Credits / Apply Product Credits To Personal Order With Non Eligible Item Spec] Test Suite
+================================================================================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags toApplyProdCredToPersonalOrdTwoUS) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+ ✔ Passed [ok]: Starting seeding of subscription for data with tags toApplyProdCredToPersonalOrdTwoUS) ok
+ ✔ Passed [ok]: Retrying for subscription: in progress ok
+ ✔ Passed [ok]: Seeded subscription ok
+
+Running:  opening a new order page from the navigation dropdown
+ ✔ Element <#login-field> was present after 21 milliseconds.
+ ✔ Element <#password-field> was present after 14 milliseconds.
+Entered "dsr_100363008@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 17 milliseconds.
+ ✔ Element <#signin_submit> was not present after 2881 milliseconds.
+ ✔ Element <.keyloader> was present after 14 milliseconds.
+ ✔ Element <.keyloader> was not visible after 70 milliseconds.
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'Create Customer/Hostess Order')]]> was visible after 51 milliseconds.
+ ✔ Element <//*[@id="content"]//h1[text()[contains(.,'Create Orders')]]> was visible after 609 milliseconds.
+ ✔ Expected element <//*[@id="content"]//h1[text()[contains(.,'Create Orders')]]> text to equal: "Create Orders" - condition was met in 28ms
+
+OK. 9 assertions passed. (14.797s)
+
+Running:  dsr can start personal order
+ ✔ Element <#btn-dsr-order> was visible after 32 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1038 milliseconds.
+ ✔ Element <.cancel-order> was present after 585 milliseconds.
+ ✔ Element <#order_cancel_modal> was visible after 600 milliseconds.
+ ✔ Element <.cancel-order> was not present after 1045 milliseconds.
+ ✔ Element <#btn-dsr-order> was visible after 23 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1040 milliseconds.
+ ✔ Element <//*[@id="content"]//h1[text()[contains(.,'Add Items')]]> was visible after 544 milliseconds.
+ ✔ Expected element <//*[@id="content"]//h1[text()[contains(.,'Add Items')]]> text to equal: "Add Items" - condition was met in 26ms
+
+OK. 9 assertions passed. (8.24s)
+
+Running:  Verify Product Credits information on Add Item page
+ ✔ Element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-on-bag')]> was visible after 30 milliseconds.
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//h5> text to equal: "PRODUCT CREDIT" - condition was met in 30ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//strong> text to equal: "$150.00" - condition was met in 36ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-on-bag')]> text to equal: "(Applied on bag)" - condition was met in 27ms
+
+OK. 4 assertions passed. (128ms)
+
+Running:  add items to cart and proceed to cart page
+ ✔ Element <.searchbox-input> was visible after 29 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 32 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 28 milliseconds.
+ ✔ Element <(//*[contains(@class, 'hidden-xs') and not(contains(., "Engravable") or contains(., "Engraving"))]//button[contains(@class, 'addtocart') and not(@disabled) and not(contains(@style,'display: none;'))])[1]> was visible after 30 milliseconds.
+ ✔ Element <//*[@id='cart']//button[@id='view_cart' and (@disabled='' or contains(@class, 'disabled'))]> was not present after 1071 milliseconds.
+ ✔ Expected element <#cart h4 span> text to contain: "1" - condition was met in 33ms
+ ✔ Element <//*[@id='cart']//button[@id='view_cart' and not(@disabled='' or contains(@class, 'disabled'))]> was visible after 29 milliseconds.
+ ✔ Element <//*[@id='cart']//button[@id='view_cart' and not(@disabled='' or contains(@class, 'disabled'))]> was not present after 758 milliseconds.
+ ✔ Element <//*[@id="content"]//h1[text()[contains(.,'Bag')]]> was visible after 36 milliseconds.
+ ✔ Expected element <//*[@id="content"]//h1[text()[contains(.,'Bag')]]> text to equal: "Bag" - condition was met in 30ms
+
+OK. 10 assertions passed. (6.528s)
+
+Running:  Verify product credit info and default credits applied
+ ✔ Element <#cart> was visible after 29 milliseconds.
+ ✔ Element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-below')]> was visible after 30 milliseconds.
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//h5> text to equal: "PRODUCT CREDIT" - condition was met in 32ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//strong> text to equal: "$150.00" - condition was met in 31ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-below')]> text to equal: "($0.00 applied)" - condition was met in 27ms
+ ✔ Element <//*[@class='clearfix' and contains(., 'Items without Designer Discount and Product Credits')]/span[1]> was visible after 29 milliseconds.
+ ✔ Expected element <//*[@class='clearfix' and contains(., 'Items without Designer Discount and Product Credits')]/span[1]> text to equal: "Items without Designer Discount and Product Credits (1)" - condition was met in 26ms
+ ✔ Expected element <//*[@class='clearfix' and contains(., 'Items without Designer Discount and Product Credits')]/span[2]> text to equal: "$12.00" - condition was met in 33ms
+ ✔ Expected element <//*[@id='before_total_block']//*[contains(@class, 'bottom-10') and contains(., 'Product Credits')]> to not be present - element was not found in 16ms.
+ ✔ Expected element <h2.top-5.bottom-5.num.inline-block.pull-right> text to equal: "$12.00" - condition was met in 33ms
+
+OK. 10 assertions passed. (3.298s)
+
+OK. 42  total assertions passed. (40.792s)
+Terminated: 15
+
+
+======================================================================
+
+
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage keep-ca --tag applyProductCreditsToPersonalOrderWithNonEligibleItem
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=keep-ca
++ npm test -- --tag applyProductCreditsToPersonalOrderWithNonEligibleItem
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "applyProductCreditsToPersonalOrderWithNonEligibleItem"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF keep-referral-rewards-program
+Setting up value for FF keep-lounge-expedited-shipping-methods
+Setting up value for FF keep-sampling-all-qualify-enabled
+Got true as value for FF keep-referral-rewards-program
+Got true as value for FF keep-lounge-expedited-shipping-methods
+Got false as value for FF keep-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Lounge / Common / Credits / Apply Product Credits To Personal Order With Non Eligible Item Spec] Test Suite
+================================================================================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags toApplyProdCredToPersonalOrdTwoCA) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+ ✔ Passed [ok]: Starting seeding of subscription for data with tags toApplyProdCredToPersonalOrdTwoCA) ok
+ ✔ Passed [ok]: Retrying for subscription: in progress ok
+ ✔ Passed [ok]: Seeded subscription ok
+
+Running:  opening a new order page from the navigation dropdown
+ ✔ Element <#login-field> was present after 17 milliseconds.
+ ✔ Element <#password-field> was present after 14 milliseconds.
+Entered "ca_dsr_100375002@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 17 milliseconds.
+ ✔ Element <#signin_submit> was not present after 3663 milliseconds.
+ ✔ Element <.keyloader> was present after 15 milliseconds.
+ ✔ Element <.keyloader> was not visible after 23 milliseconds.
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'Create Customer/Hostess Order')]]> was visible after 43 milliseconds.
+ ✔ Element <//*[@id="content"]//h1[text()[contains(.,'Create Orders')]]> was visible after 599 milliseconds.
+ ✔ Expected element <//*[@id="content"]//h1[text()[contains(.,'Create Orders')]]> text to equal: "Create Orders" - condition was met in 54ms
+
+OK. 9 assertions passed. (18.205s)
+
+Running:  dsr can start personal order
+ ✔ Element <#btn-dsr-order> was visible after 48 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1047 milliseconds.
+ ✔ Element <.cancel-order> was present after 530 milliseconds.
+ ✔ Element <#order_cancel_modal> was visible after 579 milliseconds.
+ ✔ Element <.cancel-order> was not present after 1047 milliseconds.
+ ✔ Element <#btn-dsr-order> was visible after 540 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1044 milliseconds.
+ ✔ Element <//*[@id="content"]//h1[text()[contains(.,'Add Items')]]> was visible after 563 milliseconds.
+ ✔ Expected element <//*[@id="content"]//h1[text()[contains(.,'Add Items')]]> text to equal: "Add Items" - condition was met in 26ms
+
+OK. 9 assertions passed. (8.794s)
+
+Running:  Verify Product Credits information on Add Item page
+ ✔ Element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-on-bag')]> was visible after 28 milliseconds.
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//h5> text to equal: "PRODUCT CREDIT" - condition was met in 30ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//strong> text to equal: "$150.00 CAD" - condition was met in 30ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-on-bag')]> text to equal: "(Applied on bag)" - condition was met in 25ms
+
+OK. 4 assertions passed. (119ms)
+
+Running:  add items to cart and proceed to cart page
+ ✔ Element <.searchbox-input> was visible after 28 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 610 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 28 milliseconds.
+ ✔ Element <(//*[contains(@class, 'hidden-xs') and not(contains(., "Engravable") or contains(., "Engraving"))]//button[contains(@class, 'addtocart') and not(@disabled) and not(contains(@style,'display: none;'))])[1]> was visible after 29 milliseconds.
+ ✔ Element <//*[@id='cart']//button[@id='view_cart' and (@disabled='' or contains(@class, 'disabled'))]> was not present after 1076 milliseconds.
+ ✔ Expected element <#cart h4 span> text to contain: "1" - condition was met in 27ms
+ ✔ Element <//*[@id='cart']//button[@id='view_cart' and not(@disabled='' or contains(@class, 'disabled'))]> was visible after 29 milliseconds.
+ ✔ Element <//*[@id='cart']//button[@id='view_cart' and not(@disabled='' or contains(@class, 'disabled'))]> was not present after 65 milliseconds.
+ ✔ Element <//*[@id="content"]//h1[text()[contains(.,'Bag')]]> was visible after 1065 milliseconds.
+ ✔ Expected element <//*[@id="content"]//h1[text()[contains(.,'Bag')]]> text to equal: "Bag" - condition was met in 26ms
+
+OK. 10 assertions passed. (7.433s)
+
+Running:  Verify product credit info and default credits applied
+ ✔ Element <#cart> was visible after 29 milliseconds.
+ ✔ Element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-below')]> was visible after 29 milliseconds.
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//h5> text to equal: "PRODUCT CREDIT" - condition was met in 24ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//strong> text to equal: "$150.00 CAD" - condition was met in 25ms
+ ✔ Expected element <//div[contains(@class, 'credits-block') and h5[text()[contains(.,'PRODUCT CREDIT')]]]//*[contains(@class, 'applied-below')]> text to equal: "($0.00 CAD applied)" - condition was met in 26ms
+ ✔ Element <//*[@class='clearfix' and contains(., 'Items without Designer Discount and Product Credits')]/span[1]> was visible after 29 milliseconds.
+ ✔ Expected element <//*[@class='clearfix' and contains(., 'Items without Designer Discount and Product Credits')]/span[1]> text to equal: "Items without Designer Discount and Product Credits (1)" - condition was met in 32ms
+ ✔ Expected element <//*[@class='clearfix' and contains(., 'Items without Designer Discount and Product Credits')]/span[2]> text to equal: "$15.00 CAD" - condition was met in 31ms
+ ✔ Expected element <//*[@id='before_total_block']//*[contains(@class, 'bottom-10') and contains(., 'Product Credits')]> to not be present - element was not found in 18ms.
+ ✔ Expected element <h2.top-5.bottom-5.num.inline-block.pull-right> text to equal: "$15.00 CAD" - condition was met in 37ms
+
+OK. 10 assertions passed. (3.294s)
+
+OK. 42  total assertions passed. (45.598s)
+Terminated: 15
+
+
+
