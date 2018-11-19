@@ -1,0 +1,898 @@
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ git checkout feature/auto-374
+Switched to branch 'feature/auto-374'
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage stelladot-us --tag wishlistPersonalOrder
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=stelladot-us
++ npm test -- --tag wishlistPersonalOrder
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "wishlistPersonalOrder"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF stelladot-sampling-all-qualify-enabled
+Got false as value for FF stelladot-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Lounge / Common / Wishlist / Wishlist Personal Order Spec] Test Suite
+==========================================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags wishlistPersonalOrderUS) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+ ✔ Passed [ok]: Starting seeding of subscription for data with tags wishlistPersonalOrderUS) ok
+ ✔ Passed [ok]: Retrying for subscription: in progress ok
+ ✔ Passed [ok]: Seeded subscription ok
+ ✔ Passed [ok]: Starting seeding of inventory for data with tags generalOutOfStockSku,itemNotVisibleOnEcom) ok
+ ✔ Passed [ok]: Retrying for inventory: in progress ok
+ ✔ Passed [ok]: Seeded inventory ok
+
+Running:  DSR can access Wishlist page from Initials menu "My wishlist"
+ ✔ Element <#login-field> was present after 23 milliseconds.
+ ✔ Element <#password-field> was present after 18 milliseconds.
+Entered "dsr_200312006@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 31 milliseconds.
+ ✔ Element <#signin_submit> was not present after 3461 milliseconds.
+ ✔ Element <.wishlist-page> was present after 66 milliseconds.
+Wishlist is empty. No need to remove items
+
+OK. 5 assertions passed. (23.693s)
+
+Running:  Cancel any orders in progress
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'Create Customer/Hostess Order')]]> was visible after 38 milliseconds.
+ ✔ Element <#btn-dsr-order> was visible after 561 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1051 milliseconds.
+ ✔ Element <.cancel-order> was present after 554 milliseconds.
+ ✔ Element <#order_cancel_modal> was visible after 551 milliseconds.
+ ✔ Element <.cancel-order> was not present after 1043 milliseconds.
+
+OK. 6 assertions passed. (8.347s)
+
+Running:  any Personal Order item can be added to wishlist using heart icon
+ ✔ Element <#btn-dsr-order> was visible after 31 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1049 milliseconds.
+ ✔ Element <.searchbox-input> was visible after 1079 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 2176 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 50 milliseconds.
+  Warn: WaitForElement found 16 elements for selector "//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]". Only the first one will be checked.
+ ✔ Element <//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]> was present after 22 milliseconds.
+  Warn: WaitForElement found 14 elements for selector "Section[name=defaultItem],Element[name=@addToWishlist]". Only the first one will be checked.
+ ✔ Element <Section[name=defaultItem],Element[name=@addToWishlist]> was present after 1096 milliseconds.
+ ✔ Element <Section[name=defaultItem],Element[name=@addedIcon]> was present after 1211 milliseconds.
+
+OK. 8 assertions passed. (9.192s)
+
+Running:  sku must be selected for heart icon to be clickable
+ ✔ Element <.searchbox-input> was visible after 25 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 1571 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 32 milliseconds.
+  Warn: WaitForElement found 3 elements for selector "//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]". Only the first one will be checked.
+ ✔ Element <//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]> was present after 19 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "Section[name=itemWithVariations],Element[name=@addDisabled]". Only the first one will be checked.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addDisabled]> was present after 1044 milliseconds.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addedIcon]> was present after 1054 milliseconds.
+
+OK. 6 assertions passed. (5.354s)
+
+Running:  OOS items can be added to wishlist
+ ✔ Element <.searchbox-input> was visible after 31 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 31 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 32 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "//div[contains(@class, 'item designer')]//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')]". Only the first one will be checked.
+ ✔ Element <//div[contains(@class, 'item designer')]//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')]> was present after 23 milliseconds.
+ ✔ Element <Section[name=oosItem],Element[name=@addToWishlist]> was present after 71 milliseconds.
+ ✔ Element <Section[name=oosItem],Element[name=@addedIcon]> was present after 1122 milliseconds.
+
+OK. 6 assertions passed. (2.784s)
+
+Running:  Add 3rd sku to wishlist
+ ✔ Element <.searchbox-input> was visible after 21 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 1059 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 35 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]". Only the first one will be checked.
+ ✔ Element <//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]> was present after 24 milliseconds.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addDisabled]> was present after 44 milliseconds.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addedIcon]> was present after 1613 milliseconds.
+
+OK. 6 assertions passed. (4.305s)
+
+Running:  Add item that is not visible on Ecom to wishlist
+ ✔ Element <.searchbox-input> was visible after 26 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 532 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 22 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]". Only the first one will be checked.
+ ✔ Element <//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]> was present after 19 milliseconds.
+ ✔ Element <Section[name=defaultItem],Element[name=@addToWishlist]> was present after 35 milliseconds.
+ ✔ Element <Section[name=defaultItem],Element[name=@addedIcon]> was present after 570 milliseconds.
+
+OK. 6 assertions passed. (3.512s)
+
+Running:  All item types shown on lounge wishlist with correct currency and date
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'My Wishlist')]]> was visible after 42 milliseconds.
+ ✔ Element <.wishlist-page> was visible after 1071 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Ulani Pendant")]]]//div[contains(@class,'product_title')]> text to contain: "Ulani Pendant" - condition was met in 34ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Ulani Pendant")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 39ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Ulani Pendant")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 36 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Ulani Pendant")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 29ms
+ ✔ Element <.wishlist-page> was visible after 19 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,'product_title')]> text to contain: "Clover alphabet charm - Silver" - condition was met in 32ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 32ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 30 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 26ms
+ ✔ Element <.wishlist-page> was visible after 24 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,'product_title')]> text to contain: "Work Hard Play Hard Pouch - Silver" - condition was met in 48ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 45ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 38 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 30ms
+ ✔ Element <.wishlist-page> was visible after 19 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'product_title')]> text to contain: "Soho Charm" - condition was met in 32ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'style_title')]> text to contain: "C" - condition was met in 40ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 32ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 29 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 27ms
+ ✔ Element <.wishlist-page> was visible after 18 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Taj Tote - Black/Cream")]]]//div[contains(@class,'product_title')]> text to contain: "Taj Tote - Black/Cream" - condition was met in 31ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Taj Tote - Black/Cream")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Taj Tote - Black/Cream")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 47 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Taj Tote - Black/Cream")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_before')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 32ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Taj Tote - Black/Cream")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_after')]> text to match: "/^\s*\$\d*\.?\d*\s*SALE\s*$/g" - condition was met in 33ms
+
+OK. 28 assertions passed. (3.264s)
+
+Running:  Navigate to wishlist URL & verify item set to not visible for B2C is not present
+ ✔ Element <.wishlist-page> was visible after 31 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Ulani Pendant")]]]//div[contains(@class,'product_title')]> text to contain: "Ulani Pendant" - condition was met in 29ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Ulani Pendant")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Ulani Pendant")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 27 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Ulani Pendant")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 32ms
+ ✔ Element <.wishlist-page> was visible after 20 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,'product_title')]> text to contain: "Clover alphabet charm - Silver" - condition was met in 28ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 29ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 25 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 30ms
+ ✔ Element <.wishlist-page> was visible after 19 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,'product_title')]> text to contain: "Work Hard Play Hard Pouch - Silver" - condition was met in 29ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 30ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 45 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 33ms
+ ✔ Element <.wishlist-page> was visible after 25 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'product_title')]> text to contain: "Soho Charm" - condition was met in 32ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'style_title')]> text to contain: "C" - condition was met in 33ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 31ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 38 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 40ms
+ ✔ Element <.wishlist-page> was visible after 29 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Taj Tote - Black/Cream")]]]//div[contains(@class,'product_title')]> to not be present - element was not found in 17ms.
+
+OK. 23 assertions passed. (8.977s)
+
+Running:  Navigate back to Lounge wishlist and verify share options are available
+ ✔ Element <.btn-share> was visible after 58 milliseconds.
+ ✔ Expected element <.btn-share> text to equal: "Share" - condition was met in 28ms
+ ✔ Expected element <.sharing #fb-message> text to equal: "Messenger" - condition was met in 31ms
+ ✔ Expected element <.sharing #fb-message> to have attribute "data-share-target" which equals: "messenger" - condition was met in 26ms
+ ✔ Expected element <.facebook-share> text to equal: "Facebook" - condition was met in 56ms
+ ✔ Expected element <.facebook-share> to have attribute "data-share-target" which equals: "facebook" - condition was met in 22ms
+ ✔ Expected element <.twitter-share> text to equal: "Twitter" - condition was met in 72ms
+ ✔ Expected element <.twitter-share> to have attribute "data-share-target" which equals: "twitter" - condition was met in 29ms
+ ✔ Expected element <.pinterest-share> text to equal: "Pinterest" - condition was met in 36ms
+ ✔ Expected element <.pinterest-share> to have attribute "data-share-target" which equals: "pinterest" - condition was met in 20ms
+ ✔ Expected element <.email-share> text to equal: "Email" - condition was met in 44ms
+ ✔ Expected element <.email-share> to have attribute "data-share-target" which equals: "mail" - condition was met in 23ms
+
+OK. 12 assertions passed. (2.081s)
+
+Running:  Add an item to bag from wishlist and place order
+ ✔ Element <(//*[contains(@class, 'add-to-bag-button') and not(contains(@class, 'disabled'))])[2]> was present after 29 milliseconds.
+ ✔ Element <.item-added-notification> was visible after 2152 milliseconds.
+ ✔ Expected element <.item-added-notification> text to equal: "Item added!
+VIEW BAG/CHECKOUT" in 100ms - condition was met in 62ms
+ ✔ Element <#user-nav .sd.sd-bag> was visible after 46 milliseconds.
+ ✔ Expected element <(//tr[*//div[contains(@class, 'cart-item-block') and contains(.,"Soho Charm")]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Soho Charm" - condition was met in 1623ms
+ ✔ Expected element <(//tr[*//div[contains(@class, 'cart-item-block') and contains(.,"Soho Charm")]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "C" - condition was met in 42ms
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 23 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 12 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was not present after 16 milliseconds.
+ ✔ Element <#checkout> was visible after 1079 milliseconds.
+ ✔ Expected element <//*[@id="content"]//*[text()[contains(.,"Checkout")]]> text to equal: "Checkout" - condition was met in 43ms
+ ✔ Element <.js-tax-spinner> was not visible after 2295 milliseconds.
+ ✔ Element <Section[name=billingStep],Element[name=@creditCardInfoHeader]> was visible after 46 milliseconds.
+There are saved CCs. Entering new one
+ ✔ Element <(//*[text()[contains(., "Enter a New Credit Card")]])[1]/parent::label> was visible after 33 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "Section[name=billingStep],Element[name=@firstName]". Only the first one will be checked.
+ ✔ Element <Section[name=billingStep],Element[name=@firstName]> was visible after 50 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 19 milliseconds.
+ ✔ Element <#place_order> was visible after 30 milliseconds.
+ ✔ Element <#place_order> was not present after 5525 milliseconds.
+ ✔ Element <h1> was visible after 1087 milliseconds.
+ ✔ Expected element <h1> text to contain: "Your Order Has Been Placed!" - condition was met in 36ms
+
+OK. 20 assertions passed. (19.693s)
+
+Running:  Clear Wishlist
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'My Wishlist')]]> was visible after 54 milliseconds.
+ ✔ Element <.wishlist-page> was present after 540 milliseconds.
+Removing items from wishlist
+
+OK. 2 assertions passed. (2.272s)
+
+OK. 128  total assertions passed. (1m 45s)
+Got following error in renaming screenshots: Error: ENOENT: no such file or directory, scandir './screenshots'
+Terminated: 15
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ 
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage stelladot-ca --tag wishlistPersonalOrder
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=stelladot-ca
++ npm test -- --tag wishlistPersonalOrder
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "wishlistPersonalOrder"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF stelladot-sampling-all-qualify-enabled
+Got false as value for FF stelladot-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Lounge / Common / Wishlist / Wishlist Personal Order Spec] Test Suite
+==========================================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags wishlistPersonalOrderCA) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+ ✔ Passed [ok]: Starting seeding of subscription for data with tags wishlistPersonalOrderCA) ok
+ ✔ Passed [ok]: Retrying for subscription: in progress ok
+ ✔ Passed [ok]: Seeded subscription ok
+ ✔ Passed [ok]: Starting seeding of inventory for data with tags generalOutOfStockSku,itemNotVisibleOnEcom) ok
+ ✔ Passed [ok]: Retrying for inventory: in progress ok
+ ✔ Passed [ok]: Seeded inventory ok
+
+Running:  DSR can access Wishlist page from Initials menu "My wishlist"
+ ✔ Element <#login-field> was present after 19 milliseconds.
+ ✔ Element <#password-field> was present after 15 milliseconds.
+Entered "dsr_200312008@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 28 milliseconds.
+ ✔ Element <#signin_submit> was not present after 3888 milliseconds.
+ ✔ Element <.wishlist-page> was present after 107 milliseconds.
+Wishlist is empty. No need to remove items
+
+OK. 5 assertions passed. (24.606s)
+
+Running:  Cancel any orders in progress
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'Create Customer/Hostess Order')]]> was visible after 56 milliseconds.
+ ✔ Element <#btn-dsr-order> was visible after 659 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1065 milliseconds.
+ ✔ Element <.cancel-order> was present after 532 milliseconds.
+ ✔ Element <#order_cancel_modal> was visible after 566 milliseconds.
+ ✔ Element <.cancel-order> was not present after 1044 milliseconds.
+
+OK. 6 assertions passed. (8.589s)
+
+Running:  any Personal Order item can be added to wishlist using heart icon
+ ✔ Element <#btn-dsr-order> was visible after 25 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1046 milliseconds.
+ ✔ Element <.searchbox-input> was visible after 1058 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 3726 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 33 milliseconds.
+  Warn: WaitForElement found 16 elements for selector "//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]". Only the first one will be checked.
+ ✔ Element <//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]> was present after 20 milliseconds.
+  Warn: WaitForElement found 15 elements for selector "Section[name=defaultItem],Element[name=@addToWishlist]". Only the first one will be checked.
+ ✔ Element <Section[name=defaultItem],Element[name=@addToWishlist]> was present after 300 milliseconds.
+ ✔ Element <Section[name=defaultItem],Element[name=@addedIcon]> was present after 1226 milliseconds.
+
+OK. 8 assertions passed. (9.886s)
+
+Running:  sku must be selected for heart icon to be clickable
+ ✔ Element <.searchbox-input> was visible after 25 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 3175 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 49 milliseconds.
+  Warn: WaitForElement found 3 elements for selector "//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]". Only the first one will be checked.
+ ✔ Element <//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]> was present after 18 milliseconds.
+  Warn: WaitForElement found 3 elements for selector "Section[name=itemWithVariations],Element[name=@addDisabled]". Only the first one will be checked.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addDisabled]> was present after 133 milliseconds.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addedIcon]> was present after 614 milliseconds.
+
+OK. 6 assertions passed. (5.562s)
+
+Running:  OOS items can be added to wishlist
+ ✔ Element <.searchbox-input> was visible after 42 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 25 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 19 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "//div[contains(@class, 'item designer')]//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')]". Only the first one will be checked.
+ ✔ Element <//div[contains(@class, 'item designer')]//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')]> was present after 22 milliseconds.
+ ✔ Element <Section[name=oosItem],Element[name=@addToWishlist]> was present after 37 milliseconds.
+ ✔ Element <Section[name=oosItem],Element[name=@addedIcon]> was present after 764 milliseconds.
+
+OK. 6 assertions passed. (2.172s)
+
+Running:  Add 3rd sku to wishlist
+ ✔ Element <.searchbox-input> was visible after 23 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 1566 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 21 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]". Only the first one will be checked.
+ ✔ Element <//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]> was present after 10 milliseconds.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addDisabled]> was present after 37 milliseconds.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addedIcon]> was present after 1223 milliseconds.
+
+OK. 6 assertions passed. (4.341s)
+
+Running:  Add item that is not visible on Ecom to wishlist
+ ✔ Element <.searchbox-input> was visible after 19 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 538 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 21 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]". Only the first one will be checked.
+ ✔ Element <//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]> was present after 15 milliseconds.
+ ✔ Element <Section[name=defaultItem],Element[name=@addToWishlist]> was present after 47 milliseconds.
+ ✔ Element <Section[name=defaultItem],Element[name=@addedIcon]> was present after 1318 milliseconds.
+
+OK. 6 assertions passed. (4.368s)
+
+Running:  All item types shown on lounge wishlist with correct currency and date
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'My Wishlist')]]> was visible after 71 milliseconds.
+ ✔ Element <.wishlist-page> was visible after 1124 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Versatile Chain - Silver")]]]//div[contains(@class,'product_title')]> text to contain: "Versatile Chain - Silver" - condition was met in 41ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Versatile Chain - Silver")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 112ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Versatile Chain - Silver")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 44 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Versatile Chain - Silver")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 64ms
+ ✔ Element <.wishlist-page> was visible after 21 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,'product_title')]> text to contain: "Clover alphabet charm - Silver" - condition was met in 42ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 82ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 36 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 40ms
+ ✔ Element <.wishlist-page> was visible after 20 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,'product_title')]> text to contain: "Work Hard Play Hard Pouch - Silver" - condition was met in 43ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 37ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 34 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 50ms
+ ✔ Element <.wishlist-page> was visible after 23 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'product_title')]> text to contain: "Soho Charm" - condition was met in 41ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'style_title')]> text to contain: "C" - condition was met in 37ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 31 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 30ms
+ ✔ Element <.wishlist-page> was visible after 25 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Taj Tote - Black/Cream")]]]//div[contains(@class,'product_title')]> text to contain: "Taj Tote - Black/Cream" - condition was met in 48ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Taj Tote - Black/Cream")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 42ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Taj Tote - Black/Cream")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 36 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Taj Tote - Black/Cream")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_before')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 47ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Taj Tote - Black/Cream")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_after')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*SALE\s*$/g" - condition was met in 37ms
+
+OK. 28 assertions passed. (3.838s)
+
+Running:  Navigate to wishlist URL & verify item set to not visible for B2C is not present
+ ✔ Element <.wishlist-page> was visible after 30 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Versatile Chain - Silver")]]]//div[contains(@class,'product_title')]> text to contain: "Versatile Chain - Silver" - condition was met in 34ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Versatile Chain - Silver")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 36ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Versatile Chain - Silver")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 30 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Versatile Chain - Silver")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 39ms
+ ✔ Element <.wishlist-page> was visible after 27 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,'product_title')]> text to contain: "Clover alphabet charm - Silver" - condition was met in 30ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 27ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 31 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Clover alphabet charm - Silver")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 39ms
+ ✔ Element <.wishlist-page> was visible after 32 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,'product_title')]> text to contain: "Work Hard Play Hard Pouch - Silver" - condition was met in 37ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 31ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 32 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Work Hard Play Hard Pouch - Silver")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 56ms
+ ✔ Element <.wishlist-page> was visible after 24 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'product_title')]> text to contain: "Soho Charm" - condition was met in 30ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'style_title')]> text to contain: "C" - condition was met in 39ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 42ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 50 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Soho Charm")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 48ms
+ ✔ Element <.wishlist-page> was visible after 23 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Taj Tote - Black/Cream")]]]//div[contains(@class,'product_title')]> to not be present - element was not found in 16ms.
+
+OK. 23 assertions passed. (9.734s)
+
+Running:  Navigate back to Lounge wishlist and verify share options are available
+ ✔ Element <.btn-share> was visible after 48 milliseconds.
+ ✔ Expected element <.btn-share> text to equal: "Share" - condition was met in 42ms
+ ✔ Expected element <.sharing #fb-message> text to equal: "Messenger" - condition was met in 43ms
+ ✔ Expected element <.sharing #fb-message> to have attribute "data-share-target" which equals: "messenger" - condition was met in 26ms
+ ✔ Expected element <.facebook-share> text to equal: "Facebook" - condition was met in 93ms
+ ✔ Expected element <.facebook-share> to have attribute "data-share-target" which equals: "facebook" - condition was met in 35ms
+ ✔ Expected element <.twitter-share> text to equal: "Twitter" - condition was met in 73ms
+ ✔ Expected element <.twitter-share> to have attribute "data-share-target" which equals: "twitter" - condition was met in 22ms
+ ✔ Expected element <.pinterest-share> text to equal: "Pinterest" - condition was met in 55ms
+ ✔ Expected element <.pinterest-share> to have attribute "data-share-target" which equals: "pinterest" - condition was met in 20ms
+ ✔ Expected element <.email-share> text to equal: "Email" - condition was met in 42ms
+ ✔ Expected element <.email-share> to have attribute "data-share-target" which equals: "mail" - condition was met in 24ms
+
+OK. 12 assertions passed. (2.653s)
+
+Running:  Add an item to bag from wishlist and place order
+ ✔ Element <(//*[contains(@class, 'add-to-bag-button') and not(contains(@class, 'disabled'))])[2]> was present after 17 milliseconds.
+ ✔ Element <.item-added-notification> was visible after 2125 milliseconds.
+ ✔ Expected element <.item-added-notification> text to equal: "Item added!
+VIEW BAG/CHECKOUT" in 100ms - condition was met in 31ms
+ ✔ Element <#user-nav .sd.sd-bag> was visible after 33 milliseconds.
+ ✔ Expected element <(//tr[*//div[contains(@class, 'cart-item-block') and contains(.,"Soho Charm")]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Soho Charm" - condition was met in 1606ms
+ ✔ Expected element <(//tr[*//div[contains(@class, 'cart-item-block') and contains(.,"Soho Charm")]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "C" - condition was met in 25ms
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 20 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 10 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was not present after 21 milliseconds.
+ ✔ Element <#checkout> was visible after 1583 milliseconds.
+ ✔ Expected element <//*[@id="content"]//*[text()[contains(.,"Checkout")]]> text to equal: "Checkout" - condition was met in 35ms
+ ✔ Element <.js-tax-spinner> was not visible after 2150 milliseconds.
+ ✔ Element <Section[name=billingStep],Element[name=@creditCardInfoHeader]> was visible after 64 milliseconds.
+There are saved CCs. Entering new one
+ ✔ Element <(//*[text()[contains(., "Enter a New Credit Card")]])[1]/parent::label> was visible after 35 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "Section[name=billingStep],Element[name=@firstName]". Only the first one will be checked.
+ ✔ Element <Section[name=billingStep],Element[name=@firstName]> was visible after 93 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 21 milliseconds.
+ ✔ Element <#place_order> was visible after 28 milliseconds.
+ ✔ Element <#place_order> was not present after 5644 milliseconds.
+ ✔ Element <h1> was visible after 1062 milliseconds.
+ ✔ Expected element <h1> text to contain: "Your Order Has Been Placed!" - condition was met in 29ms
+
+OK. 20 assertions passed. (20.254s)
+
+Running:  Clear Wishlist
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'My Wishlist')]]> was visible after 51 milliseconds.
+ ✔ Element <.wishlist-page> was present after 581 milliseconds.
+Removing items from wishlist
+
+OK. 2 assertions passed. (2.375s)
+
+OK. 128  total assertions passed. (1m 50s)
+Got following error in renaming screenshots: Error: ENOENT: no such file or directory, scandir './screenshots'
+Terminated: 15
+
+===============
+
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage keep-ca --tag wishlistPersonalOrder
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=keep-ca
++ npm test -- --tag wishlistPersonalOrder
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "wishlistPersonalOrder"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF keep-referral-rewards-program
+Setting up value for FF keep-lounge-expedited-shipping-methods
+Setting up value for FF keep-sampling-all-qualify-enabled
+Got true as value for FF keep-referral-rewards-program
+Got true as value for FF keep-lounge-expedited-shipping-methods
+Got false as value for FF keep-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Lounge / Common / Wishlist / Wishlist Personal Order Spec] Test Suite
+==========================================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags wishlistPersonalOrderCA) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+ ✔ Passed [ok]: Starting seeding of subscription for data with tags wishlistPersonalOrderCA) ok
+ ✔ Passed [ok]: Retrying for subscription: in progress ok
+ ✔ Passed [ok]: Seeded subscription ok
+ ✔ Passed [ok]: Starting seeding of inventory for data with tags generalOutOfStockSku,itemNotVisibleOnEcom) ok
+ ✔ Passed [ok]: Retrying for inventory: in progress ok
+ ✔ Passed [ok]: Seeded inventory ok
+
+Running:  DSR can access Wishlist page from Initials menu "My wishlist"
+ ✔ Element <#login-field> was present after 20 milliseconds.
+ ✔ Element <#password-field> was present after 14 milliseconds.
+Entered "dsr_200312004@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 18 milliseconds.
+ ✔ Element <#signin_submit> was not present after 3094 milliseconds.
+ ✔ Element <.wishlist-page> was present after 64 milliseconds.
+Removing items from wishlist
+
+OK. 5 assertions passed. (17.376s)
+
+Running:  Cancel any orders in progress
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'Create Customer/Hostess Order')]]> was visible after 38 milliseconds.
+ ✔ Element <#btn-dsr-order> was visible after 560 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1039 milliseconds.
+ ✔ Element <.cancel-order> was present after 541 milliseconds.
+ ✔ Element <#order_cancel_modal> was visible after 547 milliseconds.
+ ✔ Element <.cancel-order> was not present after 1048 milliseconds.
+
+OK. 6 assertions passed. (8.319s)
+
+Running:  any Personal Order item can be added to wishlist using heart icon
+ ✔ Element <#btn-dsr-order> was visible after 22 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1040 milliseconds.
+ ✔ Element <.searchbox-input> was visible after 543 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 572 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 47 milliseconds.
+  Warn: WaitForElement found 8 elements for selector "//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]". Only the first one will be checked.
+ ✔ Element <//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]> was present after 19 milliseconds.
+  Warn: WaitForElement found 8 elements for selector "Section[name=defaultItem],Element[name=@addToWishlist]". Only the first one will be checked.
+ ✔ Element <Section[name=defaultItem],Element[name=@addToWishlist]> was present after 3073 milliseconds.
+ ✔ Element <Section[name=defaultItem],Element[name=@addedIcon]> was present after 6671 milliseconds.
+
+OK. 8 assertions passed. (14.396s)
+
+Running:  sku must be selected for heart icon to be clickable
+ ✔ Element <.searchbox-input> was visible after 27 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 560 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 35 milliseconds.
+  Warn: WaitForElement found 5 elements for selector "//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]". Only the first one will be checked.
+ ✔ Element <//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]> was present after 15 milliseconds.
+  Warn: WaitForElement found 4 elements for selector "Section[name=itemWithVariations],Element[name=@addDisabled]". Only the first one will be checked.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addDisabled]> was present after 3055 milliseconds.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addedIcon]> was present after 3681 milliseconds.
+
+OK. 6 assertions passed. (8.867s)
+
+Running:  OOS items can be added to wishlist
+ ✔ Element <.searchbox-input> was visible after 17 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 19 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 17 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "//div[contains(@class, 'item designer')]//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')]". Only the first one will be checked.
+ ✔ Element <//div[contains(@class, 'item designer')]//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')]> was present after 13 milliseconds.
+ ✔ Element <Section[name=oosItem],Element[name=@addToWishlist]> was present after 36 milliseconds.
+ ✔ Element <Section[name=oosItem],Element[name=@addedIcon]> was present after 3592 milliseconds.
+
+OK. 6 assertions passed. (4.925s)
+
+Running:  Add 3rd sku to wishlist
+ ✔ Element <.searchbox-input> was visible after 16 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 20 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 16 milliseconds.
+  Warn: WaitForElement found 3 elements for selector "//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]". Only the first one will be checked.
+ ✔ Element <//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]> was present after 9 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "Section[name=itemWithVariations],Element[name=@addDisabled]". Only the first one will be checked.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addDisabled]> was present after 45 milliseconds.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addedIcon]> was present after 591 milliseconds.
+
+OK. 6 assertions passed. (2.07s)
+
+Running:  Add item that is not visible on Ecom to wishlist
+ ✔ Element <.searchbox-input> was visible after 16 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 21 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 16 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]". Only the first one will be checked.
+ ✔ Element <//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]> was present after 16 milliseconds.
+ ✔ Element <Section[name=defaultItem],Element[name=@addToWishlist]> was present after 30 milliseconds.
+ ✔ Element <Section[name=defaultItem],Element[name=@addedIcon]> was present after 3592 milliseconds.
+
+OK. 6 assertions passed. (5.918s)
+
+Running:  All item types shown on lounge wishlist with correct currency and date
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'My Wishlist')]]> was visible after 36 milliseconds.
+ ✔ Element <.wishlist-page> was visible after 566 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,'product_title')]> text to contain: "FLAMINGO - SILVER - COLLECTOR'S EDITION" - condition was met in 32ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 31 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 28ms
+ ✔ Element <.wishlist-page> was visible after 18 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'product_title')]> text to contain: "LETTERS A-Z, &, # - GOLD" - condition was met in 30ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 30ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 27 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_before')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 31ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_after')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*SALE\s*$/g" - condition was met in 35ms
+ ✔ Element <.wishlist-page> was visible after 18 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'product_title')]> text to contain: "SEPTEMBER COLLECTOR'S EDITION BUNDLE" - condition was met in 29ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 29ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 31 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_before')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 32ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_after')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*SALE\s*$/g" - condition was met in 37ms
+ ✔ Element <.wishlist-page> was visible after 16 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'product_title')]> text to contain: "NUMBERS 0-9 - GOLD" - condition was met in 30ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'style_title')]> text to contain: "2" - condition was met in 40ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 52ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 28 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 26ms
+ ✔ Element <.wishlist-page> was visible after 17 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flame - Yellow/Gold")]]]//div[contains(@class,'product_title')]> text to contain: "FLAME - YELLOW/GOLD" - condition was met in 30ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flame - Yellow/Gold")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 29ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flame - Yellow/Gold")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 27 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flame - Yellow/Gold")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_before')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 32ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flame - Yellow/Gold")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_after')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*SALE\s*$/g" - condition was met in 34ms
+
+OK. 30 assertions passed. (2.804s)
+
+Running:  Navigate to wishlist URL & verify item set to not visible for B2C is not present
+ ✔ Element <.wishlist-page> was visible after 24 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,'product_title')]> text to contain: "FLAMINGO - SILVER - COLLECTOR'S EDITION" - condition was met in 31ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 30ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 28 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 26ms
+ ✔ Element <.wishlist-page> was visible after 21 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'product_title')]> text to contain: "LETTERS A-Z, &, # - GOLD" - condition was met in 29ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 29ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 28 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_before')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 30ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_after')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*SALE\s*$/g" - condition was met in 32ms
+ ✔ Element <.wishlist-page> was visible after 17 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'product_title')]> text to contain: "SEPTEMBER COLLECTOR'S EDITION BUNDLE" - condition was met in 31ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 35ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 28 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_before')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 32ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_after')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*SALE\s*$/g" - condition was met in 41ms
+ ✔ Element <.wishlist-page> was visible after 20 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'product_title')]> text to contain: "NUMBERS 0-9 - GOLD" - condition was met in 34ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'style_title')]> text to contain: "2" - condition was met in 31ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 32ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 30 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d* CAD\s*$/g" - condition was met in 36ms
+ ✔ Element <.wishlist-page> was visible after 21 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flame - Yellow/Gold")]]]//div[contains(@class,'product_title')]> to not be present - element was not found in 12ms.
+
+OK. 25 assertions passed. (6.976s)
+
+Running:  Navigate back to Lounge wishlist and verify share options are available
+ ✔ Element <.btn-share> was visible after 41 milliseconds.
+ ✔ Expected element <.btn-share> text to equal: "Share" - condition was met in 26ms
+ ✔ Expected element <.sharing #fb-message> text to equal: "Messenger" - condition was met in 30ms
+ ✔ Expected element <.sharing #fb-message> to have attribute "data-share-target" which equals: "messenger" - condition was met in 16ms
+ ✔ Expected element <.facebook-share> text to equal: "Facebook" - condition was met in 59ms
+ ✔ Expected element <.facebook-share> to have attribute "data-share-target" which equals: "facebook" - condition was met in 45ms
+ ✔ Expected element <.twitter-share> text to equal: "Twitter" - condition was met in 35ms
+ ✔ Expected element <.twitter-share> to have attribute "data-share-target" which equals: "twitter" - condition was met in 18ms
+ ✔ Expected element <.pinterest-share> text to equal: "Pinterest" - condition was met in 45ms
+ ✔ Expected element <.pinterest-share> to have attribute "data-share-target" which equals: "pinterest" - condition was met in 28ms
+ ✔ Expected element <.email-share> text to equal: "Email" - condition was met in 33ms
+ ✔ Expected element <.email-share> to have attribute "data-share-target" which equals: "mail" - condition was met in 19ms
+
+OK. 12 assertions passed. (5.602s)
+
+Running:  Add an item to bag from wishlist and place order
+ ✔ Element <(//*[contains(@class, 'add-to-bag-button') and not(contains(@class, 'disabled'))])[2]> was present after 14 milliseconds.
+ ✔ Element <.item-added-notification> was visible after 1629 milliseconds.
+ ✔ Expected element <.item-added-notification> text to equal: "Item added!
+VIEW BAG/CHECKOUT" in 100ms - condition was met in 75ms
+ ✔ Element <#user-nav .sd.sd-bag> was visible after 43 milliseconds.
+ ✔ Expected element <(//tr[*//div[contains(@class, 'cart-item-block') and contains(.,"Numbers 0-9 - Gold")]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Numbers 0-9 - Gold" - condition was met in 1086ms
+ ✔ Expected element <(//tr[*//div[contains(@class, 'cart-item-block') and contains(.,"Numbers 0-9 - Gold")]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "2" - condition was met in 23ms
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 14 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 15 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was not present after 25 milliseconds.
+ ✔ Element <#checkout> was visible after 1065 milliseconds.
+ ✔ Expected element <//*[@id="content"]//*[text()[contains(.,"Checkout")]]> text to equal: "Checkout" - condition was met in 31ms
+ ✔ Element <.js-tax-spinner> was not visible after 8307 milliseconds.
+ ✔ Element <Section[name=billingStep],Element[name=@creditCardInfoHeader]> was visible after 41 milliseconds.
+There are saved CCs. Entering new one
+ ✔ Element <(//*[text()[contains(., "Enter a New Credit Card")]])[1]/parent::label> was visible after 28 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "Section[name=billingStep],Element[name=@firstName]". Only the first one will be checked.
+ ✔ Element <Section[name=billingStep],Element[name=@firstName]> was visible after 60 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 23 milliseconds.
+ ✔ Element <#place_order> was visible after 35 milliseconds.
+ ✔ Element <#place_order> was not present after 5197 milliseconds.
+ ✔ Element <h1> was visible after 541 milliseconds.
+ ✔ Expected element <h1> text to contain: "Your Order Has Been Placed!" - condition was met in 25ms
+
+OK. 20 assertions passed. (23.763s)
+
+Running:  Clear Wishlist
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'My Wishlist')]]> was visible after 29 milliseconds.
+ ✔ Element <.wishlist-page> was present after 545 milliseconds.
+Removing items from wishlist
+
+OK. 2 assertions passed. (2.084s)
+
+OK. 132  total assertions passed. (1m 53s)
+Terminated: 15
+
+========
+
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ ./runTests.sh stage keep-us --tag wishlistPersonalOrder
+Starting selenium and logging output to logs/selenium.log
++ TARGET_ENV=stage
++ SCOPE=keep-us
++ npm test -- --tag wishlistPersonalOrder
+
+> lounge_workflow@1.0.0 test /Users/manassrivastava/www_lounge_workflows
+> nightwatch "--tag" "wishlistPersonalOrder"
+
+[LaunchDarkly] Initializing stream processor to receive feature flag updates
+Setting up value for FF keep-referral-rewards-program
+Setting up value for FF keep-lounge-expedited-shipping-methods
+Setting up value for FF keep-sampling-all-qualify-enabled
+Got true as value for FF keep-referral-rewards-program
+Got true as value for FF keep-lounge-expedited-shipping-methods
+Got false as value for FF keep-sampling-all-qualify-enabled
+Closing LD Connection
+
+[Lounge / Common / Wishlist / Wishlist Personal Order Spec] Test Suite
+==========================================================================
+ ✔ Passed [ok]: Starting seeding of user for data with tags wishlistPersonalOrderUS) ok
+ ✔ Passed [ok]: Retrying for user: in progress ok
+ ✔ Passed [ok]: Seeded user ok
+ ✔ Passed [ok]: Starting seeding of subscription for data with tags wishlistPersonalOrderUS) ok
+ ✔ Passed [ok]: Retrying for subscription: in progress ok
+ ✔ Passed [ok]: Seeded subscription ok
+ ✔ Passed [ok]: Starting seeding of inventory for data with tags generalOutOfStockSku,itemNotVisibleOnEcom) ok
+ ✔ Passed [ok]: Retrying for inventory: in progress ok
+ ✔ Passed [ok]: Seeded inventory ok
+
+Running:  DSR can access Wishlist page from Initials menu "My wishlist"
+ ✔ Element <#login-field> was present after 16 milliseconds.
+ ✔ Element <#password-field> was present after 14 milliseconds.
+Entered "dsr_200312002@workflowstest.com" and "P@ssword123" in username and password fields respectively.
+ ✔ Element <#signin_submit> was present after 32 milliseconds.
+ ✔ Element <#signin_submit> was not present after 3101 milliseconds.
+ ✔ Element <.wishlist-page> was present after 637 milliseconds.
+Removing items from wishlist
+
+OK. 5 assertions passed. (19.959s)
+
+Running:  Cancel any orders in progress
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'Create Customer/Hostess Order')]]> was visible after 39 milliseconds.
+ ✔ Element <#btn-dsr-order> was visible after 580 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1036 milliseconds.
+ ✔ Element <.cancel-order> was present after 528 milliseconds.
+ ✔ Element <#order_cancel_modal> was visible after 546 milliseconds.
+ ✔ Element <.cancel-order> was not present after 1040 milliseconds.
+
+OK. 6 assertions passed. (8.302s)
+
+Running:  any Personal Order item can be added to wishlist using heart icon
+ ✔ Element <#btn-dsr-order> was visible after 535 milliseconds.
+ ✔ Element <#btn-dsr-order> was not present after 1037 milliseconds.
+ ✔ Element <.searchbox-input> was visible after 539 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 577 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 27 milliseconds.
+  Warn: WaitForElement found 8 elements for selector "//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]". Only the first one will be checked.
+ ✔ Element <//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]> was present after 20 milliseconds.
+  Warn: WaitForElement found 8 elements for selector "Section[name=defaultItem],Element[name=@addToWishlist]". Only the first one will be checked.
+ ✔ Element <Section[name=defaultItem],Element[name=@addToWishlist]> was present after 125 milliseconds.
+ ✔ Element <Section[name=defaultItem],Element[name=@addedIcon]> was present after 1107 milliseconds.
+
+OK. 8 assertions passed. (6.311s)
+
+Running:  sku must be selected for heart icon to be clickable
+ ✔ Element <.searchbox-input> was visible after 17 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 535 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 19 milliseconds.
+  Warn: WaitForElement found 5 elements for selector "//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]". Only the first one will be checked.
+ ✔ Element <//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]> was present after 14 milliseconds.
+  Warn: WaitForElement found 4 elements for selector "Section[name=itemWithVariations],Element[name=@addDisabled]". Only the first one will be checked.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addDisabled]> was present after 68 milliseconds.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addedIcon]> was present after 1349 milliseconds.
+
+OK. 6 assertions passed. (3.463s)
+
+Running:  OOS items can be added to wishlist
+ ✔ Element <.searchbox-input> was visible after 16 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 44 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 19 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "//div[contains(@class, 'item designer')]//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')]". Only the first one will be checked.
+ ✔ Element <//div[contains(@class, 'item designer')]//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')]> was present after 14 milliseconds.
+ ✔ Element <Section[name=oosItem],Element[name=@addToWishlist]> was present after 33 milliseconds.
+ ✔ Element <Section[name=oosItem],Element[name=@addedIcon]> was present after 590 milliseconds.
+
+OK. 6 assertions passed. (1.968s)
+
+Running:  Add 3rd sku to wishlist
+ ✔ Element <.searchbox-input> was visible after 17 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 20 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 19 milliseconds.
+  Warn: WaitForElement found 3 elements for selector "//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]". Only the first one will be checked.
+ ✔ Element <//div[contains(@class, 'item designer')]//select[@id='size']/ancestor::div[contains(@class, 'item')]> was present after 8 milliseconds.
+  Warn: WaitForElement found 3 elements for selector "Section[name=itemWithVariations],Element[name=@addDisabled]". Only the first one will be checked.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addDisabled]> was present after 411 milliseconds.
+ ✔ Element <Section[name=itemWithVariations],Element[name=@addedIcon]> was present after 1327 milliseconds.
+
+OK. 6 assertions passed. (3.17s)
+
+Running:  Add item that is not visible on Ecom to wishlist
+ ✔ Element <.searchbox-input> was visible after 17 milliseconds.
+ ✔ Element <#spinner-block> was not visible after 47 milliseconds.
+ ✔ Element <.reset-search-btn> was visible after 18 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]". Only the first one will be checked.
+ ✔ Element <//*[contains(@class, 'like-icon default') and not(contains(@class, 'disabled'))]/ancestor::div[contains(@class, 'item') and not(.//strong[text()="OUT OF STOCK" and not(contains(@style,"display: none")) and not(contains(@style, "display:none"))]/ancestor::div[contains(@class, 'item')])]> was present after 8 milliseconds.
+ ✔ Element <Section[name=defaultItem],Element[name=@addToWishlist]> was present after 30 milliseconds.
+ ✔ Element <Section[name=defaultItem],Element[name=@addedIcon]> was present after 568 milliseconds.
+
+OK. 6 assertions passed. (2.903s)
+
+Running:  All item types shown on lounge wishlist with correct currency and date
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'My Wishlist')]]> was visible after 31 milliseconds.
+ ✔ Element <.wishlist-page> was visible after 547 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,'product_title')]> text to contain: "FLAMINGO - SILVER - COLLECTOR'S EDITION" - condition was met in 31ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 32ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 35 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 29ms
+ ✔ Element <.wishlist-page> was visible after 18 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'product_title')]> text to contain: "LETTERS A-Z, &, # - GOLD" - condition was met in 33ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 31ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 28 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_before')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 31ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_after')]> text to match: "/^\s*\$\d*\.?\d*\s*SALE\s*$/g" - condition was met in 33ms
+ ✔ Element <.wishlist-page> was visible after 23 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'product_title')]> text to contain: "SEPTEMBER COLLECTOR'S EDITION BUNDLE" - condition was met in 69ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 31ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 27 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_before')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 30ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_after')]> text to match: "/^\s*\$\d*\.?\d*\s*SALE\s*$/g" - condition was met in 31ms
+ ✔ Element <.wishlist-page> was visible after 18 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'product_title')]> text to contain: "NUMBERS 0-9 - GOLD" - condition was met in 29ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'style_title')]> text to contain: "2" - condition was met in 29ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 33ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 27 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 38ms
+ ✔ Element <.wishlist-page> was visible after 22 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flame - Yellow/Gold")]]]//div[contains(@class,'product_title')]> text to contain: "FLAME - YELLOW/GOLD" - condition was met in 36ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flame - Yellow/Gold")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 30ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flame - Yellow/Gold")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 28 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flame - Yellow/Gold")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_before')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 30ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flame - Yellow/Gold")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_after')]> text to match: "/^\s*\$\d*\.?\d*\s*SALE\s*$/g" - condition was met in 35ms
+
+OK. 30 assertions passed. (2.747s)
+
+Running:  Navigate to wishlist URL & verify item set to not visible for B2C is not present
+ ✔ Element <.wishlist-page> was visible after 27 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,'product_title')]> text to contain: "FLAMINGO - SILVER - COLLECTOR'S EDITION" - condition was met in 32ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 29ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 28 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flamingo - Silver - COLLECTOR'S EDITION")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 25ms
+ ✔ Element <.wishlist-page> was visible after 18 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'product_title')]> text to contain: "LETTERS A-Z, &, # - GOLD" - condition was met in 30ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 35ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 27 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_before')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 30ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Letters A-Z, &, # - Gold")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_after')]> text to match: "/^\s*\$\d*\.?\d*\s*SALE\s*$/g" - condition was met in 31ms
+ ✔ Element <.wishlist-page> was visible after 19 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'product_title')]> text to contain: "SEPTEMBER COLLECTOR'S EDITION BUNDLE" - condition was met in 36ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 30ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 27 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_before')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 34ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "September Collector's Edition Bundle")]]]//div[contains(@class,'whishlist-price-container')]//span[contains(@class, 'price_sale_after')]> text to match: "/^\s*\$\d*\.?\d*\s*SALE\s*$/g" - condition was met in 31ms
+ ✔ Element <.wishlist-page> was visible after 20 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'product_title')]> text to contain: "NUMBERS 0-9 - GOLD" - condition was met in 35ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'style_title')]> text to contain: "2" - condition was met in 35ms
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,"wishlist-item-bottom")]//span[contains(@class,"added_at_title")]> text to contain: "11/19/2018" - condition was met in 39ms
+ ✔ Element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'whishlist-price-container')]> was visible after 32 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Numbers 0-9 - Gold")]]]//div[contains(@class,'whishlist-price-container')]> text to match: "/^\s*\$\d*\.?\d*\s*$/g" - condition was met in 27ms
+ ✔ Element <.wishlist-page> was visible after 20 milliseconds.
+ ✔ Expected element <//*[contains(@class, 'wishlist-flex-item')][.//*[text()[contains(., "Flame - Yellow/Gold")]]]//div[contains(@class,'product_title')]> to not be present - element was not found in 10ms.
+
+OK. 25 assertions passed. (7.344s)
+
+Running:  Navigate back to Lounge wishlist and verify share options are available
+ ✔ Element <.btn-share> was visible after 29 milliseconds.
+ ✔ Expected element <.btn-share> text to equal: "Share" - condition was met in 33ms
+ ✔ Expected element <.sharing #fb-message> text to equal: "Messenger" - condition was met in 29ms
+ ✔ Expected element <.sharing #fb-message> to have attribute "data-share-target" which equals: "messenger" - condition was met in 16ms
+ ✔ Expected element <.facebook-share> text to equal: "Facebook" - condition was met in 46ms
+ ✔ Expected element <.facebook-share> to have attribute "data-share-target" which equals: "facebook" - condition was met in 18ms
+ ✔ Expected element <.twitter-share> text to equal: "Twitter" - condition was met in 33ms
+ ✔ Expected element <.twitter-share> to have attribute "data-share-target" which equals: "twitter" - condition was met in 16ms
+ ✔ Expected element <.pinterest-share> text to equal: "Pinterest" - condition was met in 54ms
+ ✔ Expected element <.pinterest-share> to have attribute "data-share-target" which equals: "pinterest" - condition was met in 18ms
+ ✔ Expected element <.email-share> text to equal: "Email" - condition was met in 43ms
+ ✔ Expected element <.email-share> to have attribute "data-share-target" which equals: "mail" - condition was met in 15ms
+
+OK. 12 assertions passed. (2.987s)
+
+Running:  Add an item to bag from wishlist and place order
+ ✔ Element <(//*[contains(@class, 'add-to-bag-button') and not(contains(@class, 'disabled'))])[2]> was present after 16 milliseconds.
+ ✔ Element <.item-added-notification> was visible after 1619 milliseconds.
+ ✔ Expected element <.item-added-notification> text to equal: "Item added!
+VIEW BAG/CHECKOUT" in 100ms - condition was met in 61ms
+ ✔ Element <#user-nav .sd.sd-bag> was visible after 62 milliseconds.
+ ✔ Expected element <(//tr[*//div[contains(@class, 'cart-item-block') and contains(.,"Numbers 0-9 - Gold")]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "Numbers 0-9 - Gold" - condition was met in 1092ms
+ ✔ Expected element <(//tr[*//div[contains(@class, 'cart-item-block') and contains(.,"Numbers 0-9 - Gold")]])[1]//*[contains(@class, 'cart-item-desc')]> text to contain: "2" - condition was met in 26ms
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 15 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was present after 49 milliseconds.
+ ✔ Element <#checkout .btn.checkout:enabled> was not present after 23 milliseconds.
+ ✔ Element <#checkout> was visible after 1062 milliseconds.
+ ✔ Expected element <//*[@id="content"]//*[text()[contains(.,"Checkout")]]> text to equal: "Checkout" - condition was met in 29ms
+ ✔ Element <.js-tax-spinner> was not visible after 2624 milliseconds.
+ ✔ Element <Section[name=billingStep],Element[name=@creditCardInfoHeader]> was visible after 41 milliseconds.
+There are saved CCs. Entering new one
+ ✔ Element <(//*[text()[contains(., "Enter a New Credit Card")]])[1]/parent::label> was visible after 27 milliseconds.
+  Warn: WaitForElement found 2 elements for selector "Section[name=billingStep],Element[name=@firstName]". Only the first one will be checked.
+ ✔ Element <Section[name=billingStep],Element[name=@firstName]> was visible after 51 milliseconds.
+ ✔ Element <.js-tax-spinner> was not visible after 19 milliseconds.
+ ✔ Element <#place_order> was visible after 30 milliseconds.
+ ✔ Element <#place_order> was not present after 5039 milliseconds.
+ ✔ Element <h1> was visible after 551 milliseconds.
+ ✔ Expected element <h1> text to contain: "Your Order Has Been Placed!" - condition was met in 25ms
+
+OK. 20 assertions passed. (18.008s)
+
+Running:  Clear Wishlist
+ ✔ Element <//*[contains(@class, 'navbar-collapse collapse')]//*[text()[contains(.,'My Wishlist')]]> was visible after 35 milliseconds.
+ ✔ Element <.wishlist-page> was present after 444 milliseconds.
+Removing items from wishlist
+
+OK. 2 assertions passed. (2.066s)
+
+OK. 132  total assertions passed. (1m 29s)
+Terminated: 15
+Manass-MacBook-Pro:www_lounge_workflows manassrivastava$ 
